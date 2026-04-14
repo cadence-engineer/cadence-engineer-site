@@ -26,6 +26,7 @@ The interface should reduce technical intimidation without hiding precision.
 
 The brand should feel technical, credible, and structured, but still accessible.
 It should suggest engineering rigor without looking cold, cryptic, or overly developer-centric.
+Use rose as the primary accent color to introduce warmth and emphasis within an otherwise calm, structured palette, with `rose-400` defined as the default accent token.
 
 Aim for:
 
@@ -49,6 +50,7 @@ CSS decisions in this project should be explicit, reusable, and portable to othe
 
 - Prefer design tokens over hardcoded one-off values.
 - Centralize core choices such as colors, spacing, typography, radii, shadows, and layout widths.
+- Treat `accent` as the default semantic accent token for emphasis, interactive states, and key moments of visual focus, mapped to `rose-400`.
 - Use semantic names for reusable styles instead of page-specific names when possible.
 - Treat each new section as a candidate pattern that may be reused elsewhere.
 - Favor composition of small reusable utilities and primitives over large tightly coupled page styles.
