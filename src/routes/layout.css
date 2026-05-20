@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+:root {
+	--color-surface: #ffffff;
+	--color-text: #050505;
+	--color-accent: #ef405c;
+	--color-text-inverse: #ffffff;
+	--color-muted: #8b8b8b;
+	--color-border: #ececec;
+	--color-hover: #f6f6f6;
+	--radius-control: 6px;
+	--site-content-width: 1120px;
+	--site-gutter: 42px;
+	--section-block-padding: 104px;
+	--font-size-base: 16px;
+	--font-size-banner: 15px;
+	--font-size-banner-mobile: 13px;
+	--font-weight-base: 500;
+	--font-weight-heading: 700;
+
+	font-family:
+		Outfit,
+		ui-sans-serif,
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
+	color: var(--color-text);
+	background: var(--color-surface);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-base);
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	background: var(--color-surface);
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	background: var(--color-surface);
+}
+
+button,
+input,
+textarea {
+	font: inherit;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.site-page {
+	display: grid;
+	min-height: 100dvh;
+	grid-template-rows: auto auto 1fr auto;
+	background: var(--color-surface);
+	color: var(--color-text);
+}
+
+.site-content-section {
+	width: min(var(--site-content-width), 100%);
+	margin: 0 auto;
+	padding: var(--section-block-padding) var(--site-gutter);
+}
+
+.site-content-section h1 {
+	margin: 0;
+	font-size: clamp(34px, 5vw, 52px);
+	font-weight: var(--font-weight-heading);
+	letter-spacing: 0;
+	line-height: 1.08;
+}
+
+.site-section-copy {
+	display: grid;
+	gap: 22px;
+	margin-top: 36px;
+	font-size: 21px;
+	font-weight: var(--font-weight-base);
+	line-height: 1.5;
+}
+
+.site-section-copy p {
+	margin: 0;
+}
+
+.site-address {
+	display: grid;
+	gap: 10px;
+	margin-top: 36px;
+	font-style: normal;
+	font-size: 21px;
+	font-weight: var(--font-weight-base);
+	line-height: 1.5;
+}
+
+.site-address strong {
+	font-weight: var(--font-weight-heading);
+}
+
+.site-address a {
+	width: fit-content;
+	color: var(--color-accent);
+}
+
+.site-address a:hover {
+	color: #e73553;
+}
+
+@media (max-width: 900px) {
+	:root {
+		--site-gutter: 28px;
+		--section-block-padding: 72px;
+	}
+}
+
+@media (max-width: 560px) {
+	:root {
+		--site-gutter: 18px;
+		--section-block-padding: 56px;
+	}
+
+	.site-content-section h1 {
+		font-size: 32px;
+	}
+
+	.site-section-copy,
+	.site-address {
+		margin-top: 28px;
+		font-size: 17px;
+	}
+}
