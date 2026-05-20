@@ -1,12 +1,14 @@
 <script lang="ts">
+	import { asset } from '$app/paths';
 	import BrowserFrame from '$lib/BrowserFrame.svelte';
 	import CadenceEngineer from '$lib/CadenceEngineer.svelte';
 	import DevelopmentBanner from '$lib/DevelopmentBanner.svelte';
-	import githubLogo from '$lib/assets/github-lockup-black.svg';
-	import mondayLogo from '$lib/assets/monday-logo-black.svg';
 	import RotatingWord from '$lib/RotatingWord.svelte';
 	import SiteFooter from '$lib/SiteFooter.svelte';
 	import SiteHeader from '$lib/SiteHeader.svelte';
+
+	const githubLogo = asset('/github-lockup-black.svg');
+	const mondayLogo = asset('/monday-logo-black.svg');
 </script>
 
 <svelte:head>
