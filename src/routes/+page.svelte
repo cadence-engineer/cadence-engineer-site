@@ -493,6 +493,7 @@
 
 	.daily-demo-detail {
 		margin-top: 36px;
+		font-family: var(--font-serif);
 		font-size: clamp(15px, 1.25vw, 16px);
 		line-height: 1.48;
 	}

@@ -1,7 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('/fonts/Satoshi/Fonts/WEB/fonts/Satoshi-Variable.woff2') format('woff2');
+	font-weight: 300 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Satoshi';
+	src: url('/fonts/Satoshi/Fonts/WEB/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+	font-weight: 300 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Zodiak';
+	src: url('/fonts/Zodiak/Fonts/WEB/fonts/Zodiak-Variable.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Zodiak';
+	src: url('/fonts/Zodiak/Fonts/WEB/fonts/Zodiak-VariableItalic.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
 
 :root {
 	--color-surface: #ffffff;
@@ -18,17 +49,13 @@
 	--font-size-base: 16px;
 	--font-size-banner: 15px;
 	--font-size-banner-mobile: 13px;
-	--font-weight-base: 500;
-	--font-weight-heading: 700;
+	--font-weight-base: 600;
+	--font-weight-heading: 900;
+	--font-sans:
+		Satoshi, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-serif: Zodiak, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 
-	font-family:
-		Outfit,
-		ui-sans-serif,
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		'Segoe UI',
-		sans-serif;
+	font-family: var(--font-sans);
 	color: var(--color-text);
 	background: var(--color-surface);
 	font-size: var(--font-size-base);
@@ -93,6 +120,7 @@ a {
 	display: grid;
 	gap: 22px;
 	margin-top: 36px;
+	font-family: var(--font-serif);
 	font-size: 21px;
 	font-weight: var(--font-weight-base);
 	line-height: 1.5;
