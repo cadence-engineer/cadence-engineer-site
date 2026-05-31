@@ -301,7 +301,8 @@
 	}
 
 	.engineer-intro-copy {
-		width: 100%;
+		width: 800px;
+		margin: 0 auto;
 	}
 
 	.engineer-intro-visual {
@@ -311,7 +312,7 @@
 	}
 
 	.connections-heading {
-		width: min(680px, 100%);
+		width: 100%;
 	}
 
 	.connections-heading h2 {
