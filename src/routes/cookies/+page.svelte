@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Cadence Engineer</title>
+	<title>Cookies | Cadence Engineer</title>
 </svelte:head>
 
 <main></main>

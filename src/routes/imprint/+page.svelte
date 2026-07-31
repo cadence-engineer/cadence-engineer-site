@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Cadence Engineer</title>
+	<title>Imprint | Cadence Engineer</title>
 </svelte:head>
 
 <main></main>

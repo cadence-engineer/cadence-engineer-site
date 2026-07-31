@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Cadence Engineer</title>
+	<title>Contact | Cadence Engineer</title>
 </svelte:head>
 
 <main></main>
