@@ -21,7 +21,28 @@
 		feature="Daily"
 		caption="Every day tells a story."
 		description="Daily turns project activity into one concise update. See what moved forward, what changed, and what needs attention next without chasing updates or adding more reporting work."
-	/>
+	>
+		<article class="daily-summary font-generated">
+			<h4>Good morning, Dominik</h4>
+
+			<div class="daily-summary__body">
+				<p>
+					Yesterday, the Daily feature was completed and released in Cadence Engineer. It now brings
+					activity from GitHub and monday.com together in one clear update.
+				</p>
+
+				<p>
+					Final review went smoothly, and the remaining inconsistencies in how project updates were
+					grouped and explained were resolved. No blockers remain for the initial release.
+				</p>
+
+				<p>
+					Today, the focus shifts to reviewing the first generated dailies, monitoring their quality,
+					and gathering feedback before making the feature available more broadly.
+				</p>
+			</div>
+		</article>
+	</FeatureShowcase>
 </main>
 
 <style>
@@ -44,6 +65,26 @@
 
 	.hero h1 {
 		font-size: 4rem;
+	}
+
+	.daily-summary {
+		display: grid;
+		gap: 2rem;
+		padding: 2rem;
+	}
+
+	.daily-summary h4,
+	.daily-summary p {
+		margin: 0;
+	}
+
+	.daily-summary h4 {
+		font-size: 2rem;
+	}
+
+	.daily-summary__body {
+		display: grid;
+		gap: 1rem;
 	}
 
 	@media (max-width: 40rem) {

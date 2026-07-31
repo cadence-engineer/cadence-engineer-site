@@ -50,7 +50,7 @@
 
 	.feature-showcase__description {
 		display: grid;
-		align-content: center;
+		align-content: start;
 		gap: 2rem;
 	}
 
