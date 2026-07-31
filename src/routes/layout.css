@@ -32,7 +32,9 @@
 	--font-interface:
 		'Satoshi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 	--font-generated: 'Sentient', ui-serif, Georgia, Cambria, 'Times New Roman', serif;
-	--font-weight-regular: 500;
+	--font-weight-interface-regular: 500;
+	--font-weight-generated-regular: 400;
+	--font-weight-regular: var(--font-weight-interface-regular);
 	--font-weight-bold: 900;
 }
 
@@ -94,7 +96,10 @@ b,
 
 .font-generated,
 .ai-generated {
+	--font-weight-regular: var(--font-weight-generated-regular);
+
 	font-family: var(--font-generated);
+	font-weight: var(--font-weight-generated-regular);
 }
 
 .brand-logo {

@@ -76,9 +76,10 @@ Typography communicates who produced the content:
 - Satoshi is the interface font for human-written or deterministic content, including navigation, controls, labels, metadata, headings, and ordinary website copy.
 - Sentient is reserved for AI- or LLM-generated content, regardless of its length.
 
-The system uses two semantic weights:
+The system uses regular and bold semantic weights, with a family-specific regular weight:
 
-- Regular: `500` for paragraphs, links, and ordinary interface text
+- Satoshi regular: `500` for paragraphs, links, and ordinary interface text
+- Sentient regular: `400` for AI- or LLM-generated paragraphs and prose
 - Bold: `900` for headings and titles
 
 Satoshi contains a true weight 900. The supplied Sentient variable font ends at 700, so a requested weight of 900 resolves to Sentient's heaviest available weight. Do not synthesize or modify the font to manufacture a weight 900.
@@ -87,7 +88,9 @@ Use the semantic global definitions:
 
 - `--font-interface` or `.font-interface` for Satoshi
 - `--font-generated`, `.font-generated`, or `.ai-generated` for Sentient
-- `--font-weight-regular` for regular text
+- `--font-weight-interface-regular` for regular Satoshi text
+- `--font-weight-generated-regular` for regular Sentient text
+- `--font-weight-regular` as the context-sensitive regular weight
 - `--font-weight-bold` for headings and titles
 - Tailwind `font-sans` maps to Satoshi
 - Tailwind `font-serif` maps to Sentient
