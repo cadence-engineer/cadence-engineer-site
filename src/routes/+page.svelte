@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FeatureShowcase } from '$lib';
+	import { AiMessage, ChatInput, FeatureShowcase, UserMessage } from '$lib';
 </script>
 
 <svelte:head>
@@ -43,6 +43,27 @@
 			</div>
 		</article>
 	</FeatureShowcase>
+
+	<FeatureShowcase
+		cardPosition="left"
+		feature="Chat"
+		caption="Go ahead. Ask away."
+		description="Ask about a feature, project, or anything happening across your organization. Cadence Engineer uses activity and summaries to explain what happened, why it matters, and where things stand."
+	>
+		<div class="chat-ui">
+			<div class="chat-messages">
+				<UserMessage>What can I use the new Chat feature for?</UserMessage>
+
+				<AiMessage>
+					You can ask about projects, features, and activity across your organization. I’ll use the
+					available project context and summaries to explain what happened, where things stand, and
+					what’s coming next.
+				</AiMessage>
+			</div>
+
+			<ChatInput />
+		</div>
+	</FeatureShowcase>
 </main>
 
 <style>
@@ -85,6 +106,29 @@
 	.daily-summary__body {
 		display: grid;
 		gap: 1rem;
+	}
+
+	.chat-ui,
+	.chat-messages {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.chat-ui {
+		gap: 8rem;
+		padding: 2rem;
+	}
+
+	.chat-messages {
+		gap: 4rem;
+	}
+
+	.chat-messages :global(.user-message) {
+		align-self: flex-end;
+	}
+
+	.chat-messages :global(.ai-message) {
+		align-self: flex-start;
 	}
 
 	@media (max-width: 40rem) {
