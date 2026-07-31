@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import BrandLogo from './BrandLogo.svelte';
+	import Button from './Button.svelte';
 </script>
 
 <header class="site-header">
 	<nav aria-label="Primary navigation">
-		<a href={`${base}/`} aria-label="Cadence Engineer home">
+		<a class="home-link" href={`${base}/`} aria-label="Cadence Engineer home">
 			<BrandLogo alt="" />
 		</a>
+
+		<Button href="https://app.cadence.engineer/auth">Sign in</Button>
 	</nav>
 </header>
 
@@ -21,12 +24,20 @@
 	}
 
 	.site-header nav,
-	.site-header a {
+	.site-header .home-link {
 		display: flex;
 		align-items: center;
 	}
 
-	.site-header a {
+	.site-header nav {
+		width: 100%;
+		max-width: 75rem;
+		margin-inline: auto;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.site-header .home-link {
 		color: inherit;
 	}
 
