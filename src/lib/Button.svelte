@@ -33,6 +33,7 @@
 		justify-content: center;
 		box-sizing: border-box;
 		border: 0;
+		border-radius: 0.5rem;
 		padding-inline: 1rem;
 		background: var(--color-accent);
 		color: var(--brand-color-white);
@@ -42,6 +43,13 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
+	}
+
+	@supports (corner-shape: squircle) {
+		.button {
+			border-radius: 1rem;
+			corner-shape: squircle;
+		}
 	}
 
 	.button:focus-visible {
