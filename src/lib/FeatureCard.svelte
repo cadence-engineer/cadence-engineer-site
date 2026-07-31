@@ -18,6 +18,7 @@
 
 <style>
 	.feature-card {
+		flex: 1 1 auto;
 		width: 100%;
 		border-radius: 3rem;
 		background: var(--brand-color-white);

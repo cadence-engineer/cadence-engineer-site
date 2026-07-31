@@ -1,5 +1,7 @@
+export { default as AiMessage } from './AiMessage.svelte';
 export { default as BrandLogo } from './BrandLogo.svelte';
 export { default as Button } from './Button.svelte';
+export { default as ChatInput } from './ChatInput.svelte';
 export { default as CopyrightLabel } from './CopyrightLabel.svelte';
 export { default as FeatureCard } from './FeatureCard.svelte';
 export { default as FeatureShowcase } from './FeatureShowcase.svelte';
@@ -7,3 +9,4 @@ export { default as Section } from './Section.svelte';
 export { default as SiteBanner } from './SiteBanner.svelte';
 export { default as SiteFooter } from './SiteFooter.svelte';
 export { default as SiteHeader } from './SiteHeader.svelte';
+export { default as UserMessage } from './UserMessage.svelte';

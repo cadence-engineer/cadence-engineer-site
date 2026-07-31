@@ -4,17 +4,21 @@
 	import Section from './Section.svelte';
 
 	type Props = {
+		cardPosition?: 'left' | 'right';
 		caption: string;
 		children?: Snippet;
 		description: string;
 		feature: string;
 	};
 
-	let { caption, children, description, feature }: Props = $props();
+	let { cardPosition = 'right', caption, children, description, feature }: Props = $props();
 </script>
 
 <Section>
-	<div class="feature-showcase">
+	<div
+		class="feature-showcase"
+		class:feature-showcase--card-left={cardPosition === 'left'}
+	>
 		<div class="feature-showcase__description">
 			<header>
 				<h2>{feature}</h2>
@@ -40,6 +44,10 @@
 		max-width: 75rem;
 		margin-inline: auto;
 		gap: 2rem;
+	}
+
+	.feature-showcase--card-left {
+		flex-direction: row-reverse;
 	}
 
 	.feature-showcase__description,
