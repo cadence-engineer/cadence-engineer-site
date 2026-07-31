@@ -38,7 +38,8 @@ The adjacent `cadence-engineer-brand` repository is the source of truth for bran
 
 - Copy required production assets into this repository; do not load them from GitHub raw URLs.
 - Copy only formats that the website actually uses.
-- Prefer variable WOFF2 webfonts over complete desktop font packages.
+- Prefer normal variable WOFF2 webfonts over complete desktop font packages.
+- Do not add italic font variants; the site does not use italic typography.
 - Keep each copied font license alongside its font files.
 - Prefer SVG for interface logos and icons.
 - Do not edit files in `cadence-engineer-brand` as a side effect of site work.
@@ -75,10 +76,19 @@ Typography communicates who produced the content:
 - Satoshi is the interface font for human-written or deterministic content, including navigation, controls, labels, metadata, headings, and ordinary website copy.
 - Sentient is reserved for AI- or LLM-generated content, regardless of its length.
 
+The system uses two semantic weights:
+
+- Regular: `500` for paragraphs, links, and ordinary interface text
+- Bold: `900` for headings and titles
+
+Satoshi contains a true weight 900. The supplied Sentient variable font ends at 700, so a requested weight of 900 resolves to Sentient's heaviest available weight. Do not synthesize or modify the font to manufacture a weight 900.
+
 Use the semantic global definitions:
 
 - `--font-interface` or `.font-interface` for Satoshi
 - `--font-generated`, `.font-generated`, or `.ai-generated` for Sentient
+- `--font-weight-regular` for regular text
+- `--font-weight-bold` for headings and titles
 - Tailwind `font-sans` maps to Satoshi
 - Tailwind `font-serif` maps to Sentient
 
