@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { FeatureShowcase } from '$lib';
+</script>
+
 <svelte:head>
 	<title>Cadence Engineer</title>
 </svelte:head>
@@ -12,6 +16,12 @@
 			</p>
 		</div>
 	</section>
+
+	<FeatureShowcase
+		feature="Daily"
+		caption="Every day tells a story."
+		description="Daily turns project activity into one concise update. See what moved forward, what changed, and what needs attention next without chasing updates or adding more reporting work."
+	/>
 </main>
 
 <style>
