@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import CopyrightLabel from './CopyrightLabel.svelte';
 
 	const links = [
 		{ href: '/contact/', label: 'Contact' },
@@ -17,7 +18,7 @@
 		{/each}
 	</nav>
 
-	<p>©&nbsp;2026 Cadence Engineer</p>
+	<CopyrightLabel />
 </footer>
 
 <style>
@@ -29,9 +30,12 @@
 
 	.site-footer nav {
 		display: flex;
+		width: 100%;
+		max-width: 75rem;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 1rem 2rem;
+		margin-inline: auto;
 	}
 
 	.site-footer a {
@@ -44,7 +48,4 @@
 		text-underline-offset: 0.2em;
 	}
 
-	.site-footer p {
-		margin: 0;
-	}
 </style>
