@@ -2,89 +2,125 @@
 
 ## Project Purpose
 
-This project defines the visual language for Cadence Engineer's static marketing site.
-It should also serve as a reusable styling reference for related apps and future pages.
+`cadence-engineer-site` is the static public website for Cadence Engineer.
+The project was intentionally reset to a blank starting point so the site can be redesigned from the current Figma work and the shared brand system.
 
-Cadence Engineer is a SaaS tool that helps organizations create a concise narrative about what is happening on the technical side of the organization.
-The product translates engineering reality into communication that non-technical stakeholders can follow and act on.
+Cadence Engineer turns software-delivery activity into concise, understandable narratives for managers, teams, and other business-facing stakeholders.
 
-## Target Audience
+Do not restore content, components, routes, or styling from earlier versions unless explicitly requested.
 
-Primary audiences are non-technical stakeholders, including:
+## Technical Architecture
 
-- Product owners
-- Project managers
-- C-level leaders
-- Sales teams
-- Marketing teams
-- Other business-facing decision makers
+- Framework: SvelteKit with Svelte 5 in runes mode
+- Styling: Tailwind CSS 4 plus global CSS
+- Rendering: all routes are prerendered
+- Adapter: `@sveltejs/adapter-static`
+- Backend: none in this repository
+- Development: Vite through `pnpm dev`
+- Validation: `pnpm check`
+- Production: `pnpm build` generates a deployable static site
 
-Design and copy should assume readers are intelligent but not deeply technical.
-The interface should reduce technical intimidation without hiding precision.
+Keep the site compatible with static hosting. Do not introduce server-only routes, runtime server dependencies, or backend state without explicit approval.
 
-## Visual Philosophy
+## Current Baseline
 
-The brand should feel technical, credible, and structured, but still accessible.
-It should suggest engineering rigor without looking cold, cryptic, or overly developer-centric.
-Use rose as the primary accent color to introduce warmth and emphasis within an otherwise calm, structured palette, with `rose-400` defined as the default accent token.
+- `/` is the only page and is intentionally visually blank.
+- `src/routes/+layout.ts` enables prerendering and trailing slashes.
+- `src/routes/layout.css` contains the global brand foundation.
+- `src/lib/BrandLogo.svelte` is the shared logo component.
+- `src/lib/assets/` contains only production assets needed by this site.
 
-Aim for:
+Add new pages and components deliberately as the redesign progresses.
 
-- Clear hierarchy and obvious reading flow
-- Calm, confident presentation
-- Technical visual cues expressed in a simplified way
-- Polished structure over decorative complexity
-- Abstractions that explain, not obscure
+## Brand Source of Truth
 
-Avoid:
+The adjacent `cadence-engineer-brand` repository is the source of truth for brand assets and guidance.
 
-- Dense dashboards or code-heavy aesthetics
-- Jargon-first copy
-- Overly playful startup visuals
-- Generic enterprise blandness
-- One-off styling decisions that cannot scale to other pages
+- Copy required production assets into this repository; do not load them from GitHub raw URLs.
+- Copy only formats that the website actually uses.
+- Prefer variable WOFF2 webfonts over complete desktop font packages.
+- Keep each copied font license alongside its font files.
+- Prefer SVG for interface logos and icons.
+- Do not edit files in `cadence-engineer-brand` as a side effect of site work.
+- When replacing an asset with a newer brand version, verify that the copied file matches its source.
 
-## Styling System Rules
+## Color System
 
-CSS decisions in this project should be explicit, reusable, and portable to other projects.
+The core palette is:
 
-- Prefer design tokens over hardcoded one-off values.
-- Centralize core choices such as colors, spacing, typography, radii, shadows, and layout widths.
-- Treat `accent` as the default semantic accent token for emphasis, interactive states, and key moments of visual focus, mapped to `rose-400`.
-- Use semantic names for reusable styles instead of page-specific names when possible.
-- Treat each new section as a candidate pattern that may be reused elsewhere.
-- Favor composition of small reusable utilities and primitives over large tightly coupled page styles.
-- Keep visual rules easy to extract into a shared system later.
-- If a style only works for one exact block, reconsider the abstraction before adding it.
+- Black: `#000000`
+- White: `#FFFFFF`
+- Rose: `#EF405C`
+- Teal: `#40EFD2`
+
+Black and white are the foundation. Rose is the primary accent. Teal is a rare secondary accent and should not compete with rose.
+
+Use the existing tokens rather than duplicating hex values:
+
+- `--brand-color-black`
+- `--brand-color-white`
+- `--brand-color-rose`
+- `--brand-color-teal`
+- `--color-background`
+- `--color-foreground`
+- `--color-accent`
+- `--color-accent-secondary`
+
+Tailwind exposes the same palette through the `brand-*` colors.
 
 ## Typography
 
-Typography should communicate clarity first.
-Use a modern sans-serif voice with a technical edge, but keep it readable and friendly.
+Typography communicates who produced the content:
 
-- Prioritize legibility and hierarchy over stylistic novelty.
-- Headings should feel precise and confident.
-- Body copy should be plainspoken and easy to scan.
-- Support non-technical readers with concise wording and strong contrast.
+- Satoshi is the interface font for human-written or deterministic content, including navigation, controls, labels, metadata, headings, and ordinary website copy.
+- Sentient is reserved for AI- or LLM-generated content, regardless of its length.
 
-## Layout and Interaction
+Use the semantic global definitions:
 
-- Prefer generous spacing and clean grouping.
-- Make sections easy to understand at a glance.
-- Use motion sparingly and only when it improves comprehension.
-- Favor simple visual metaphors over literal technical representations.
-- Ensure layouts remain clear on mobile before adding complexity.
+- `--font-interface` or `.font-interface` for Satoshi
+- `--font-generated`, `.font-generated`, or `.ai-generated` for Sentient
+- Tailwind `font-sans` maps to Satoshi
+- Tailwind `font-serif` maps to Sentient
 
-## Content Tone
+Do not use Sentient merely because text is long or editorial. Split mixed-origin content into separate elements when needed.
 
-- Be concise, concrete, and credible.
-- Translate technical outcomes into business understanding.
-- Emphasize clarity, alignment, momentum, and trust.
-- Do not write as if speaking only to engineers.
+## Logo
 
-## Implementation Guidance
+Use `BrandLogo` from `$lib` instead of recreating or embedding the icon in page components.
 
-- Keep global styles intentional and minimal.
-- When introducing a new visual pattern, define whether it is a token, a reusable component style, or a one-off exception.
-- Document non-obvious styling decisions in code comments only when they prevent future confusion.
-- Preserve consistency across the landing page so it can act as a reference for other Cadence Engineer surfaces.
+- The default logo is black on transparent backgrounds.
+- Use the `inverse` prop for white-on-dark presentation.
+- Size it with `--brand-logo-size` or layout constraints.
+- Keep its aspect ratio intact.
+- Provide meaningful alternative text unless the surrounding UI already supplies the same accessible name.
+
+## Design and Content Principles
+
+The site should feel technical, credible, structured, and approachable.
+
+- Create a clear hierarchy and an obvious reading flow.
+- Use generous spacing and calm grouping.
+- Translate engineering activity into language non-technical stakeholders can follow.
+- Prefer concrete, concise copy over jargon.
+- Use motion only when it improves comprehension.
+- Design mobile layouts alongside desktop layouts.
+- Avoid dense dashboards, code-heavy decoration, generic enterprise styling, and playful startup clichés.
+
+## Implementation Rules
+
+- Prefer semantic design tokens over one-off values.
+- Keep global styles limited to brand foundations and true cross-page defaults.
+- Build reusable Svelte components for repeated patterns.
+- Keep page-specific layout and styling close to the page or component that owns it.
+- Favor accessible semantic HTML and visible keyboard focus.
+- Respect reduced-motion preferences.
+- Use Svelte 5 runes and the existing project conventions.
+- Preserve `BASE_PATH` compatibility; import bundled assets through Svelte/Vite rather than hardcoding root-relative deployment URLs.
+- Do not add a backend or client-side data layer for static content.
+
+Before handing off implementation changes, run:
+
+```sh
+pnpm check
+pnpm build
+```
