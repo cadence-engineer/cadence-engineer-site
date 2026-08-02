@@ -24,11 +24,13 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 ## Current Baseline
 
-- `/` is the only page and is intentionally visually blank.
+- `/` contains the home-page hero plus Daily and Chat feature showcases.
+- The global layout provides the reusable announcement banner, header, main-content slot, and footer.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `src/routes/layout.css` contains the global brand foundation.
+- `src/lib/` contains the reusable layout, feature, card, button, and chat UI components.
 - `src/lib/BrandLogo.svelte` is the shared logo component.
-- `src/lib/assets/` contains only production assets needed by this site.
+- `src/lib/assets/` contains only production assets needed by this site, copied from `cadence-engineer-brand` where applicable.
 
 Add new pages and components deliberately as the redesign progresses.
 
@@ -42,6 +44,7 @@ The adjacent `cadence-engineer-brand` repository is the source of truth for bran
 - Do not add italic font variants; the site does not use italic typography.
 - Keep each copied font license alongside its font files.
 - Prefer SVG for interface logos and icons.
+- Copy approved Lucide SVGs from `cadence-engineer-brand/icon/lucide/` instead of adding the full icon package to this site.
 - Do not edit files in `cadence-engineer-brand` as a side effect of site work.
 - When replacing an asset with a newer brand version, verify that the copied file matches its source.
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowUp from '@lucide/svelte/icons/arrow-up';
+	import arrowUpIcon from '$lib/assets/icons/arrow-up.svg';
 
 	type Props = {
 		placeholder?: string;
@@ -11,13 +11,11 @@
 <div class="chat-input">
 	<input class="chat-input__field" type="text" {placeholder} aria-label={placeholder} />
 	<button class="chat-input__send" type="button" aria-label="Send message">
-		<ArrowUp
-			size={16}
-			strokeWidth={2}
-			stroke-linecap="square"
-			stroke-linejoin="miter"
+		<span
+			class="chat-input__send-icon"
+			style:--icon-source={`url("${arrowUpIcon}")`}
 			aria-hidden="true"
-		/>
+		></span>
 	</button>
 </div>
 
@@ -71,5 +69,14 @@
 		background: var(--color-accent);
 		color: var(--brand-color-white);
 		cursor: pointer;
+	}
+
+	.chat-input__send-icon {
+		display: block;
+		width: 1rem;
+		height: 1rem;
+		background: currentColor;
+		-webkit-mask: var(--icon-source) center / contain no-repeat;
+		mask: var(--icon-source) center / contain no-repeat;
 	}
 </style>

@@ -2,7 +2,7 @@
 
 ## Lucide Icons
 
-Package: `@lucide/svelte`
+Asset: `src/lib/assets/icons/arrow-up.svg`, copied from `cadence-engineer-brand`
 
 ISC License
 

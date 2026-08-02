@@ -1,42 +1,49 @@
-# sv
+# Cadence Engineer Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+The static public website for Cadence Engineer. The current implementation follows the shared visual system in the adjacent [`cadence-engineer-brand`](../cadence-engineer-brand/README.md) repository.
 
-## Creating a project
+## Technical architecture
 
-If you're seeing this, you've probably already done this step. Congrats!
+- SvelteKit with Svelte 5
+- Tailwind CSS 4 plus global CSS
+- Static rendering with every route prerendered at build time
+- No backend or runtime server dependency
+- Vite development server
+- `pnpm build` generates deployable static files through `@sveltejs/adapter-static`
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Development
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-pnpm dlx sv@0.15.3 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:static" playwright --install pnpm cadence-engineer-site
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies and start the development server:
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm install
+pnpm dev
 ```
 
-## Building
-
-To create a production version of your app:
+Validate and build the site:
 
 ```sh
-npm run build
+pnpm check
+pnpm build
 ```
 
-You can preview the production build with `npm run preview`.
+## Brand assets
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+`cadence-engineer-brand` is the source of truth. Required production assets are copied into this repository so the built website has no runtime dependency on GitHub or another asset host.
+
+| Site asset                                       | Brand source                                            |
+| ------------------------------------------------ | ------------------------------------------------------- |
+| `src/lib/assets/brand/cadence-engineer-icon.svg` | `cadence-engineer-brand/icon/cadence-engineer-icon.svg` |
+| `src/lib/assets/icons/arrow-up.svg`              | `cadence-engineer-brand/icon/lucide/arrow-up.svg`       |
+| `src/lib/assets/fonts/satoshi/`                  | `cadence-engineer-brand/typography/satoshi/`            |
+| `src/lib/assets/fonts/sentient/`                 | `cadence-engineer-brand/typography/sentient/`           |
+
+Copy only the formats and individual interface icons used by the website. Keep the relevant font and third-party icon notices with copied assets. Do not load brand files directly from repository URLs.
+
+## Typography
+
+- Satoshi is the interface font for human-written and deterministic content.
+- Sentient is reserved for AI- or LLM-generated content.
+- Satoshi regular uses weight `500`.
+- Sentient regular uses weight `400`.
+- Headings and titles request weight `900`; Sentient resolves to its heaviest supplied weight, `700`.
