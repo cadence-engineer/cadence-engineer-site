@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ArrowUp from '@lucide/svelte/icons/arrow-up';
+
 	type Props = {
 		placeholder?: string;
 	};
@@ -8,7 +10,15 @@
 
 <div class="chat-input">
 	<input class="chat-input__field" type="text" {placeholder} aria-label={placeholder} />
-	<button class="chat-input__send" type="button" aria-label="Send message"></button>
+	<button class="chat-input__send" type="button" aria-label="Send message">
+		<ArrowUp
+			size={16}
+			strokeWidth={2}
+			stroke-linecap="square"
+			stroke-linejoin="miter"
+			aria-hidden="true"
+		/>
+	</button>
 </div>
 
 <style>
