@@ -23,11 +23,13 @@
 	--brand-color-white: #ffffff;
 	--brand-color-rose: #ef405c;
 	--brand-color-teal: #40efd2;
+	--brand-color-light-grey: #f2f2f2;
 
 	--color-background: var(--brand-color-white);
 	--color-foreground: var(--brand-color-black);
 	--color-accent: var(--brand-color-rose);
 	--color-accent-secondary: var(--brand-color-teal);
+	--color-interactive-hover: var(--brand-color-light-grey);
 
 	--font-interface:
 		'Satoshi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -43,6 +45,7 @@
 	--color-brand-white: var(--brand-color-white);
 	--color-brand-rose: var(--brand-color-rose);
 	--color-brand-teal: var(--brand-color-teal);
+	--color-brand-light-grey: var(--brand-color-light-grey);
 	--font-sans: var(--font-interface);
 	--font-serif: var(--font-generated);
 }

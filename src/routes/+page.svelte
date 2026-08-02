@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { AiMessage, ChatInput, FeatureShowcase, UserMessage } from '$lib';
+	import { AiMessage, ChatInput, FeatureShowcase, IconButton, UserMessage } from '$lib';
+	import copyIcon from '$lib/assets/icons/copy.svg';
+	import thumbsDownIcon from '$lib/assets/icons/thumbs-down.svg';
+	import thumbsUpIcon from '$lib/assets/icons/thumbs-up.svg';
 </script>
 
 <svelte:head>
@@ -37,9 +40,15 @@
 				</p>
 
 				<p>
-					Today, the focus shifts to reviewing the first generated dailies, monitoring their quality,
-					and gathering feedback before making the feature available more broadly.
+					Today, the focus shifts to reviewing the first generated dailies, monitoring their
+					quality, and gathering feedback before making the feature available more broadly.
 				</p>
+			</div>
+
+			<div class="daily-summary__toolbar" role="toolbar" aria-label="Daily summary actions">
+				<IconButton icon={copyIcon} label="Copy daily summary" />
+				<IconButton icon={thumbsUpIcon} label="Helpful" />
+				<IconButton icon={thumbsDownIcon} label="Not helpful" />
 			</div>
 		</article>
 	</FeatureShowcase>
@@ -106,6 +115,12 @@
 	.daily-summary__body {
 		display: grid;
 		gap: 1rem;
+	}
+
+	.daily-summary__toolbar {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	.chat-ui,

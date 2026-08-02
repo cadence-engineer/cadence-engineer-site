@@ -34,7 +34,7 @@ pnpm build
 | Site asset                                       | Brand source                                            |
 | ------------------------------------------------ | ------------------------------------------------------- |
 | `src/lib/assets/brand/cadence-engineer-icon.svg` | `cadence-engineer-brand/icon/cadence-engineer-icon.svg` |
-| `src/lib/assets/icons/arrow-up.svg`              | `cadence-engineer-brand/icon/lucide/arrow-up.svg`       |
+| `src/lib/assets/icons/*.svg`                     | `cadence-engineer-brand/icon/lucide/`                   |
 | `src/lib/assets/fonts/satoshi/`                  | `cadence-engineer-brand/typography/satoshi/`            |
 | `src/lib/assets/fonts/sentient/`                 | `cadence-engineer-brand/typography/sentient/`           |
 
