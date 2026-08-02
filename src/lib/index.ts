@@ -6,6 +6,7 @@ export { default as CopyrightLabel } from './CopyrightLabel.svelte';
 export { default as FeatureCard } from './FeatureCard.svelte';
 export { default as FeatureShowcase } from './FeatureShowcase.svelte';
 export { default as IconButton } from './IconButton.svelte';
+export { default as PageSection } from './PageSection.svelte';
 export { default as Section } from './Section.svelte';
 export { default as SiteBanner } from './SiteBanner.svelte';
 export { default as SiteFooter } from './SiteFooter.svelte';
