@@ -21,14 +21,14 @@
 :root {
 	--brand-color-black: #000000;
 	--brand-color-white: #ffffff;
-	--brand-color-rose: #ef405c;
-	--brand-color-teal: #40efd2;
+	--brand-color-pink: #ef406c;
+	--brand-color-teal: #40efc3;
 	--brand-color-red: rgb(255 56 60);
 	--brand-color-light-grey: #f2f2f2;
 
 	--color-background: var(--brand-color-white);
 	--color-foreground: var(--brand-color-black);
-	--color-accent: var(--brand-color-rose);
+	--color-accent: var(--brand-color-pink);
 	--color-accent-secondary: var(--brand-color-teal);
 	--color-danger: var(--brand-color-red);
 	--color-interactive-hover: var(--brand-color-light-grey);
@@ -45,7 +45,7 @@
 @theme inline {
 	--color-brand-black: var(--brand-color-black);
 	--color-brand-white: var(--brand-color-white);
-	--color-brand-rose: var(--brand-color-rose);
+	--color-brand-pink: var(--brand-color-pink);
 	--color-brand-teal: var(--brand-color-teal);
 	--color-brand-light-grey: var(--brand-color-light-grey);
 	--font-sans: var(--font-interface);

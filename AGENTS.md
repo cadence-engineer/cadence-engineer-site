@@ -54,18 +54,18 @@ The core palette is:
 
 - Black: `#000000`
 - White: `#FFFFFF`
-- Rose: `#EF405C`
-- Teal: `#40EFD2`
+- Pink: `#EF406C`
+- Teal: `#40EFC3`
 - Red: `#FF383C`, reserved for dangerous or destructive actions
 - Light grey: `#F2F2F2`
 
-Black and white are the foundation. Rose is the primary accent. Teal is a rare secondary accent and should not compete with rose. Red is a semantic danger color, not a general accent.
+Black and white are the foundation. Pink is the primary accent. Teal is a rare secondary accent and should not compete with pink. Red is a semantic danger color, not a general accent.
 
 Use the existing tokens rather than duplicating hex values:
 
 - `--brand-color-black`
 - `--brand-color-white`
-- `--brand-color-rose`
+- `--brand-color-pink`
 - `--brand-color-teal`
 - `--brand-color-red`
 - `--brand-color-light-grey`
