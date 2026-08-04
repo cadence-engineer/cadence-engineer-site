@@ -23,12 +23,14 @@
 	--brand-color-white: #ffffff;
 	--brand-color-rose: #ef405c;
 	--brand-color-teal: #40efd2;
+	--brand-color-red: rgb(255 56 60);
 	--brand-color-light-grey: #f2f2f2;
 
 	--color-background: var(--brand-color-white);
 	--color-foreground: var(--brand-color-black);
 	--color-accent: var(--brand-color-rose);
 	--color-accent-secondary: var(--brand-color-teal);
+	--color-danger: var(--brand-color-red);
 	--color-interactive-hover: var(--brand-color-light-grey);
 
 	--font-interface:

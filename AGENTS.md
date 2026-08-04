@@ -56,9 +56,10 @@ The core palette is:
 - White: `#FFFFFF`
 - Rose: `#EF405C`
 - Teal: `#40EFD2`
+- Red: `#FF383C`, reserved for dangerous or destructive actions
 - Light grey: `#F2F2F2`
 
-Black and white are the foundation. Rose is the primary accent. Teal is a rare secondary accent and should not compete with rose.
+Black and white are the foundation. Rose is the primary accent. Teal is a rare secondary accent and should not compete with rose. Red is a semantic danger color, not a general accent.
 
 Use the existing tokens rather than duplicating hex values:
 
@@ -66,11 +67,13 @@ Use the existing tokens rather than duplicating hex values:
 - `--brand-color-white`
 - `--brand-color-rose`
 - `--brand-color-teal`
+- `--brand-color-red`
 - `--brand-color-light-grey`
 - `--color-background`
 - `--color-foreground`
 - `--color-accent`
 - `--color-accent-secondary`
+- `--color-danger`
 - `--color-interactive-hover`
 
 Tailwind exposes the same palette through the `brand-*` colors.
