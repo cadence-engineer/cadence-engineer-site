@@ -55,7 +55,7 @@ The core palette is:
 - Black: `#000000`
 - White: `#FFFFFF`
 - Pink: `#EF406C`
-- Teal: `#40EFC3`
+- Teal: `#1FDBAC`
 - Red: `#FF383C`, reserved for dangerous or destructive actions
 - Light grey: `#F2F2F2`
 
