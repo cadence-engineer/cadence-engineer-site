@@ -4,6 +4,13 @@ The static public website for Cadence Engineer. The current implementation follo
 system documented by
 [`cadence-engineer-brand`](https://github.com/cadence-engineer/cadence-engineer-brand).
 
+## Current implementation
+
+Verified on August 10, 2026, the home page contains the product hero plus Daily and Chat feature
+showcases. The shared layout supplies the announcement banner, header, and footer. Contact, cookies,
+imprint, privacy, and terms pages are also present. The site remains entirely static and does not call
+the API.
+
 ## Technical architecture
 
 - SvelteKit with Svelte 5

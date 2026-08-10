@@ -1,13 +1,18 @@
-# AGENTS.md
+# Repository guidance for agents
 
 ## Project Purpose
 
-`cadence-engineer-site` is the static public website for Cadence Engineer.
-The project was intentionally reset to a blank starting point so the site can be redesigned from the current Figma work and the shared brand system.
+`cadence-engineer-site` is the static public website and acquisition experience for Cadence Engineer.
+It implements the public-facing product story using the shared brand system.
 
 Cadence Engineer turns software-delivery activity into concise, understandable narratives for managers, teams, and other business-facing stakeholders.
 
 Do not restore content, components, routes, or styling from earlier versions unless explicitly requested.
+
+## Required reading
+
+Before substantive work, read `README.md`, this file, and the relevant documentation in the adjacent
+`cadence-engineer-brand` repository when changing brand assets or visual rules.
 
 ## Technical Architecture
 
@@ -24,7 +29,11 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 ## Current Baseline
 
+Verified on August 10, 2026:
+
 - `/` contains the home-page hero plus Daily and Chat feature showcases.
+- `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
+  pages.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `src/routes/layout.css` contains the global brand foundation.
@@ -33,6 +42,9 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 - `src/lib/assets/` contains only production assets needed by this site, copied from `cadence-engineer-brand` where applicable.
 
 Add new pages and components deliberately as the redesign progresses.
+
+Update this section when routes, shared layout, major components, rendering behavior, or repository
+responsibilities change.
 
 ## Brand Source of Truth
 
@@ -139,6 +151,22 @@ The site should feel technical, credible, structured, and approachable.
 - Use Svelte 5 runes and the existing project conventions.
 - Preserve `BASE_PATH` compatibility; import bundled assets through Svelte/Vite rather than hardcoding root-relative deployment URLs.
 - Do not add a backend or client-side data layer for static content.
+
+## Documentation ownership
+
+- `README.md` owns verified architecture, development and build commands, deployment assumptions, and
+  the inventory of brand assets copied into this repository.
+- `AGENTS.md` owns local contribution constraints and the verified implementation baseline.
+- `THIRD_PARTY_NOTICES.md` and notices beside distributed assets own attribution for shipped third-party
+  work.
+- Detailed palette, typography, logo, icon, and motion guidance belongs in
+  `cadence-engineer-brand`; document only how this site consumes or adapts it.
+- API contracts, persistence, application behavior, and generation design do not belong here.
+
+Update `README.md` in the same change when routes, rendering, dependencies, scripts, hosting
+requirements, copied assets, or setup steps change. Update notices in the same change as third-party
+assets. Never present planned pages or behavior as implemented, and do not link to private overview
+documentation as a source of implementation truth.
 
 Before handing off implementation changes, run:
 
