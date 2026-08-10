@@ -1,6 +1,8 @@
 # Cadence Engineer Site
 
-The static public website for Cadence Engineer. The current implementation follows the shared visual system in the adjacent [`cadence-engineer-brand`](../cadence-engineer-brand/README.md) repository.
+The static public website for Cadence Engineer. The current implementation follows the shared visual
+system documented by
+[`cadence-engineer-brand`](https://github.com/cadence-engineer/cadence-engineer-brand).
 
 ## Technical architecture
 
