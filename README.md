@@ -22,6 +22,11 @@ the API.
 
 ## Development
 
+Requirements:
+
+- Node.js 22.12 or newer
+- pnpm 11 or newer
+
 Install dependencies and start the development server:
 
 ```sh
