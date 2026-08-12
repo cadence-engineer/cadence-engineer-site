@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { signInUrl } from '$lib/app';
 	import BrandLogo from './BrandLogo.svelte';
 	import Button from './Button.svelte';
 </script>
@@ -10,7 +11,7 @@
 			<BrandLogo alt="" />
 		</a>
 
-		<Button href="https://app.cadence.engineer/auth">Sign in</Button>
+		<Button href={signInUrl}>Sign in</Button>
 	</nav>
 </header>
 

@@ -41,6 +41,17 @@ pnpm check
 pnpm build
 ```
 
+The header's sign-in link points to `https://app.cadence.engineer/signin` by default. Set
+`PUBLIC_APP_ORIGIN` to the web application's origin to override it. For example, a development site
+deployment can use:
+
+```sh
+PUBLIC_APP_ORIGIN=https://develop.app.cadence.engineer
+```
+
+This value is embedded into the static site at build time, so the site must be rebuilt after it
+changes. Do not include `/signin` in the value; the site appends that route.
+
 ## Brand assets
 
 `cadence-engineer-brand` is the source of truth. Required production assets are copied into this repository so the built website has no runtime dependency on GitHub or another asset host.

@@ -35,6 +35,7 @@ Verified on August 10, 2026:
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
   pages.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
+- The header derives its web-app sign-in link from the build-time `PUBLIC_APP_ORIGIN` setting.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `src/routes/layout.css` contains the global brand foundation.
 - `src/lib/` contains the reusable layout, feature, card, button, and chat UI components.
