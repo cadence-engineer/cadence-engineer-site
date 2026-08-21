@@ -32,7 +32,7 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 Verified on August 21, 2026:
 
-- `/` contains the home-page hero plus Daily and Chat feature showcases.
+- `/` contains the home-page hero, Daily and Chat feature showcases, and the three plan cards.
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
   pages.
 - `static/404.html` is the lightweight static response for unknown paths; `Staticfile` disables SPA

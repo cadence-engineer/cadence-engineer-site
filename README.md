@@ -6,8 +6,8 @@ system documented by
 
 ## Current implementation
 
-Verified on August 21, 2026, the home page contains the product hero plus Daily and Chat feature
-showcases. The shared layout supplies the announcement banner, header, and footer. Contact, cookies,
+Verified on August 21, 2026, the home page contains the product hero, Daily and Chat feature
+showcases, and Free, Base, and Premium plan cards. The shared layout supplies the announcement banner, header, and footer. Contact, cookies,
 imprint, privacy, and terms pages are also present. A static `404.html` handles unknown paths. The site
 remains entirely static and does not call the API.
 
