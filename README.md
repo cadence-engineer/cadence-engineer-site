@@ -6,10 +6,10 @@ system documented by
 
 ## Current implementation
 
-Verified on August 10, 2026, the home page contains the product hero plus Daily and Chat feature
+Verified on August 21, 2026, the home page contains the product hero plus Daily and Chat feature
 showcases. The shared layout supplies the announcement banner, header, and footer. Contact, cookies,
-imprint, privacy, and terms pages are also present. The site remains entirely static and does not call
-the API.
+imprint, privacy, and terms pages are also present. A static `404.html` handles unknown paths. The site
+remains entirely static and does not call the API.
 
 ## Technical architecture
 
@@ -19,6 +19,7 @@ the API.
 - No backend or runtime server dependency
 - Vite development server
 - `pnpm build` generates deployable static files through `@sveltejs/adapter-static`
+- `Staticfile` configures Railpack to serve `build/` and return the static `404.html` for unknown paths
 
 ## Development
 

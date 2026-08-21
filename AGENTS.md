@@ -30,11 +30,13 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 ## Current Baseline
 
-Verified on August 10, 2026:
+Verified on August 21, 2026:
 
 - `/` contains the home-page hero plus Daily and Chat feature showcases.
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
   pages.
+- `static/404.html` is the lightweight static response for unknown paths; `Staticfile` disables SPA
+  index fallback in Railpack so it is served with HTTP 404.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
 - The header derives its web-app sign-in link from the build-time `PUBLIC_APP_ORIGIN` setting.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
