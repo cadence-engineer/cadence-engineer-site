@@ -51,7 +51,8 @@ PUBLIC_APP_ORIGIN=https://develop.app.cadence.engineer
 ```
 
 This value is embedded into the static site at build time, so the site must be rebuilt after it
-changes. Do not include `/signin` in the value; the site appends that route.
+changes. A hostname without a scheme is treated as HTTPS. Do not include `/signin` in the value; the
+site appends that route.
 
 ## Brand assets
 
