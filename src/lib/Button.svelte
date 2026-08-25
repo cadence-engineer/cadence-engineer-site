@@ -6,14 +6,27 @@
 		class?: string;
 		href?: string;
 		type?: 'button' | 'submit' | 'reset';
+		variant?: 'danger' | 'inverse' | 'primary' | 'secondary';
+		width?: 'content' | 'full';
 	};
 
-	let { children, class: className = '', href, type = 'button' }: Props = $props();
+	let {
+		children,
+		class: className = '',
+		href,
+		type = 'button',
+		variant = 'primary',
+		width = 'content'
+	}: Props = $props();
 
-	let classes = $derived(['button', className].filter(Boolean).join(' '));
+	let classes = $derived(
+		['button', `button--${variant}`, `button--${width}`, className].filter(Boolean).join(' ')
+	);
 </script>
 
 {#if href}
+	<!-- href intentionally supports external and mailto destinations as well as application URLs. -->
+	<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 	<a class={classes} {href}>
 		{@render children()}
 	</a>
@@ -26,23 +39,52 @@
 <style>
 	.button {
 		display: inline-flex;
-		width: fit-content;
 		height: 2rem;
-		max-width: 10rem;
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
 		border: 0;
 		border-radius: 0.5rem;
 		padding-inline: 1rem;
-		background: var(--color-accent);
-		color: var(--brand-color-white);
 		cursor: pointer;
 		line-height: 1;
 		text-decoration: none;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		overflow: hidden;
+	}
+
+	.button--content {
+		width: fit-content;
+		max-width: 10rem;
+	}
+
+	.button--full {
+		width: 100%;
+	}
+
+	.button--primary {
+		background: var(--color-accent);
+		color: var(--brand-color-white);
+	}
+
+	.button--secondary {
+		background: var(--color-accent-secondary);
+		color: var(--brand-color-black);
+	}
+
+	.button--danger {
+		background: var(--color-danger);
+		color: var(--brand-color-white);
+	}
+
+	.button--inverse {
+		background: var(--brand-color-white);
+		color: var(--brand-color-black);
+	}
+
+	.button:hover {
+		filter: brightness(0.96);
 	}
 
 	@supports (corner-shape: squircle) {

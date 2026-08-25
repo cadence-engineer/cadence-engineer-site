@@ -6,10 +6,12 @@ system documented by
 
 ## Current implementation
 
-Verified on August 25, 2026, the home page contains the product hero, Daily and Chat feature
-showcases, and Free, Base, and Premium plan cards. The shared layout supplies the announcement banner, header, and footer. Contact, cookies,
-imprint, privacy, and terms pages are also present. A static `404.html` handles unknown paths. The site
-remains entirely static and does not call the API.
+Verified on August 25, 2026, the home page contains the product hero; Daily and Chat feature
+showcases; AI-provider and connected-tool logo sections; and Basic, Premium, and Enterprise pricing
+cards. The displayed plans describe the current public-site proposal and are intentionally independent
+from the plans currently implemented by the API. The shared layout supplies the announcement banner,
+header, and footer. Contact, cookies, imprint, privacy, and terms pages are also present. A static
+`404.html` handles unknown paths. The site remains entirely static and does not call the API.
 
 ## Technical architecture
 
@@ -64,8 +66,15 @@ site appends that route.
 | `src/lib/assets/icons/*.svg`                     | `cadence-engineer-brand/icon/lucide/`                   |
 | `src/lib/assets/fonts/satoshi/`                  | `cadence-engineer-brand/typography/satoshi/`            |
 | `src/lib/assets/fonts/sentient/`                 | `cadence-engineer-brand/typography/sentient/`           |
+| `src/lib/assets/providers/*.svg`                 | User-supplied official provider brand kits              |
 
 Copy only the formats and individual interface icons used by the website. Keep the relevant font and third-party icon notices with copied assets. Do not load brand files directly from repository URLs.
+
+`ProviderSection` composes the shared responsive `LogoGrid`, which supports at most two columns and
+collapses to one column on small screens. `PricingCard` composes the shared `FeatureCard`, `Button`,
+and `Pill` primitives. Basic, Premium, and Enterprise select documented primary, secondary, and
+inverse variants; the pricing component does not override those primitives. Provider and plan content
+remains deterministic interface copy and therefore uses Satoshi.
 
 ## Typography
 
@@ -93,6 +102,8 @@ shared typography, buttons, links, inputs, cards, modals, or icon controls.
 | Chat composer     | `4rem` compound-input variant with `1rem` padding, standard surface shadow, and circular `2rem` send action                                                                |
 | Card              | White, normally `2rem` padding, `3rem` fallback radius, `6rem` squircle radius, `0 0 1rem rgb(0 0 0 / 10%)` shadow                                                         |
 | Modal/danger card | Modal retains the exact card surface and changes only to the documented stronger shadow; danger retains the card and adds semantic-red stroke/content/action treatment     |
+| Pill              | `2rem` compact label with `0.5rem 1rem` padding; primary, secondary, and inverse use the documented `30%` muted surface behind solid text                                  |
+| Logo grid         | Shared, centered, maximum two-column grid with contain-fitted marks; one column on small screens                                                                           |
 | Identity mark     | `4rem` circle for a person and `4rem` squircle for an organization                                                                                                         |
 
 All states belong to the shared component. A visual exception is valid only when explicitly requested

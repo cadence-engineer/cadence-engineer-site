@@ -7,6 +7,8 @@
 
 <header class="site-header">
 	<nav aria-label="Primary navigation">
+		<!-- The base-prefixed static-home URL is deployment-safe and cannot use route resolution. -->
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 		<a class="home-link" href={`${base}/`} aria-label="Cadence Engineer home">
 			<BrandLogo alt="" />
 		</a>

@@ -1,17 +1,40 @@
 <script lang="ts">
 	import {
 		AiMessage,
-		Button,
 		ChatInput,
 		FeatureShowcase,
 		IconButton,
+		PricingCard,
+		ProviderSection,
 		Section,
 		UserMessage
 	} from '$lib';
 	import { signInUrl } from '$lib/app';
+	import anthropicLogo from '$lib/assets/providers/anthropic.svg';
+	import githubLogo from '$lib/assets/providers/github.svg';
+	import jiraLogo from '$lib/assets/providers/jira.svg';
+	import mistralLogo from '$lib/assets/providers/mistral.svg';
+	import mondayLogo from '$lib/assets/providers/monday.svg';
+	import novitaLogo from '$lib/assets/providers/novita.svg';
+	import openaiLogo from '$lib/assets/providers/openai.svg';
+	import slackLogo from '$lib/assets/providers/slack.svg';
 	import copyIcon from '$lib/assets/icons/copy.svg';
 	import thumbsDownIcon from '$lib/assets/icons/thumbs-down.svg';
 	import thumbsUpIcon from '$lib/assets/icons/thumbs-up.svg';
+
+	const aiProviders = [
+		{ name: 'OpenAI', logo: openaiLogo },
+		{ name: 'Anthropic', logo: anthropicLogo },
+		{ name: 'Mistral AI', logo: mistralLogo },
+		{ name: 'Novita AI', logo: novitaLogo }
+	];
+
+	const toolProviders = [
+		{ name: 'GitHub', logo: githubLogo },
+		{ name: 'monday.com', logo: mondayLogo },
+		{ name: 'Jira', logo: jiraLogo },
+		{ name: 'Slack', logo: slackLogo }
+	];
 </script>
 
 <svelte:head>
@@ -21,8 +44,10 @@
 <main>
 	<section class="hero">
 		<div class="hero__container">
-			<h1>Know what happened.<br />Understand why.</h1>
-			<p>
+			<h1 class="type-display type-display--responsive">
+				Know what happened.<br />Understand why.
+			</h1>
+			<p class="type-body">
 				Ask questions, generate summaries, and turn project activity into a clear view of what
 				happened, why it matters, and what comes next.
 			</p>
@@ -35,7 +60,7 @@
 		description="Daily turns project activity into one concise update. See what moved forward, what changed, and what needs attention next without chasing updates or adding more reporting work."
 	>
 		<article class="daily-summary font-generated">
-			<h4>Good morning, Dominik</h4>
+			<h4 class="type-section-title">Good morning, Dominik</h4>
 
 			<div class="daily-summary__body">
 				<p>
@@ -83,46 +108,68 @@
 		</div>
 	</FeatureShowcase>
 
+	<ProviderSection
+		title="Choose your AI provider"
+		description="Select the AI provider that best fits your organization, with the flexibility to use the models and infrastructure you already trust. Custom enterprise plans also support your own hosted or self-hosted LLM."
+		providers={aiProviders}
+	/>
+
+	<ProviderSection
+		title="Connect your tools"
+		description="Bring the tools your organization already uses into one place. Connect your data sources to make their activity available in Cadence Engineer."
+		providers={toolProviders}
+	/>
+
 	<Section>
-		<div class="plans" aria-labelledby="plans-title">
-			<header class="plans__header">
-				<h2 id="plans-title">Plans</h2>
-				<p>Start free, then upgrade your organization when you need more.</p>
-			</header>
+		<div class="pricing" aria-labelledby="pricing-title">
+			<h2 class="type-section-title" id="pricing-title">Pricing</h2>
 
-			<div class="plans__grid">
-				<article class="plan-card">
-					<h3>Free</h3>
-					<p class="plan-card__price">€0 <span>per month</span></p>
-					<ul>
-						<li>GitHub support</li>
-						<li>3 messages per day</li>
-						<li>1 user per organization</li>
-					</ul>
-					<Button href={signInUrl}>Get started</Button>
-				</article>
+			<div class="pricing__grid">
+				<PricingCard
+					name="Basic"
+					price="€30"
+					period="/ month"
+					actionLabel="Get Started"
+					actionHref={signInUrl}
+					sections={[
+						{ label: 'Scope', items: ['1 organization', '1 user'] },
+						{ label: 'Features', items: ['Daily', 'Chat', '30 messages per day'] },
+						{ label: 'AI providers', items: ['OpenAI', 'Anthropic', 'Mistral', 'Novita'] },
+						{ label: 'Tools', items: ['GitHub', 'monday.com'] }
+					]}
+				/>
 
-				<article class="plan-card plan-card--base">
-					<h3>Base</h3>
-					<p class="plan-card__price">€30 <span>per month</span></p>
-					<ul>
-						<li>GitHub and monday.com support</li>
-						<li>30 messages per day</li>
-						<li>3 users per organization</li>
-					</ul>
-					<Button href={signInUrl}>Get started</Button>
-				</article>
+				<PricingCard
+					tone="premium"
+					name="Premium"
+					price="€50"
+					period="/ month"
+					actionLabel="Get Started"
+					actionHref={signInUrl}
+					sections={[
+						{ label: 'Scope', items: ['1 organization', '5 users'] },
+						{ label: 'Features', items: ['Daily', 'Chat', 'Unlimited messages per day'] },
+						{ label: 'AI providers', items: ['OpenAI', 'Anthropic', 'Mistral', 'Novita'] },
+						{ label: 'Tools', items: ['GitHub', 'monday.com', 'Jira', 'Slack'] }
+					]}
+				/>
 
-				<article class="plan-card plan-card--premium">
-					<h3>Premium</h3>
-					<p class="plan-card__price">€50 <span>per month</span></p>
-					<ul>
-						<li>GitHub, monday.com, Jira, and Slack support</li>
-						<li>Unlimited messages per day</li>
-						<li>Unlimited users per organization</li>
-					</ul>
-					<Button href={signInUrl}>Get started</Button>
-				</article>
+				<PricingCard
+					tone="enterprise"
+					name="Enterprise"
+					price="Custom"
+					actionLabel="Contact"
+					actionHref="mailto:dominik.strasser@cadence.engineer"
+					sections={[
+						{ label: 'Scope', items: ['Fully customizable'] },
+						{ label: 'Features', items: ['All features'] },
+						{
+							label: 'LLM provider',
+							items: ['Fully self-hosted', 'or', 'Custom LLM endpoint']
+						},
+						{ label: 'Tools', items: ['Support for all available tools'] }
+					]}
+				/>
 			</div>
 		</div>
 	</Section>
@@ -146,10 +193,6 @@
 		margin: 0;
 	}
 
-	.hero h1 {
-		font-size: 4rem;
-	}
-
 	.daily-summary {
 		display: grid;
 		gap: 2rem;
@@ -159,10 +202,6 @@
 	.daily-summary h4,
 	.daily-summary p {
 		margin: 0;
-	}
-
-	.daily-summary h4 {
-		font-size: 2rem;
 	}
 
 	.daily-summary__body {
@@ -199,98 +238,32 @@
 		align-self: flex-start;
 	}
 
-	.plans,
-	.plans__header {
+	.pricing {
 		display: grid;
-	}
-
-	.plans {
 		max-width: 75rem;
 		margin-inline: auto;
 		gap: 4rem;
 	}
 
-	.plans__header {
-		gap: 1rem;
+	.pricing h2 {
+		margin: 0;
 		text-align: center;
 	}
 
-	.plans__header h2,
-	.plans__header p,
-	.plan-card h3,
-	.plan-card p,
-	.plan-card ul {
-		margin: 0;
-	}
-
-	.plans__header h2 {
-		font-size: 2rem;
-	}
-
-	.plans__grid {
+	.pricing__grid {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 2rem;
 	}
 
-	.plan-card {
-		display: flex;
-		min-width: 0;
-		border-radius: 3rem;
-		padding: 2rem;
-		background: var(--brand-color-white);
-		box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.plan-card--base {
-		outline: 2px solid var(--color-accent);
-	}
-
-	.plan-card--premium {
-		outline: 2px solid var(--color-accent-secondary);
-	}
-
-	@supports (corner-shape: squircle) {
-		.plan-card {
-			border-radius: 6rem;
-			corner-shape: squircle;
-		}
-	}
-
-	.plan-card h3 {
-		font-size: 2rem;
-	}
-
-	.plan-card__price {
-		font-size: 1.5rem;
-		font-weight: var(--font-weight-bold);
-	}
-
-	.plan-card__price span {
-		font-size: 1rem;
-		font-weight: var(--font-weight-interface-regular);
-	}
-
-	.plan-card ul {
-		display: grid;
-		padding-left: 1.25rem;
-		gap: 0.5rem;
-	}
-
-	.plan-card :global(.button) {
-		width: 100%;
-		max-width: none;
-		margin-top: auto;
-	}
-
 	@media (max-width: 40rem) {
-		.hero h1 {
-			font-size: 2.5rem;
+		.pricing__grid {
+			grid-template-columns: 1fr;
 		}
+	}
 
-		.plans__grid {
+	@media (min-width: 40.001rem) and (max-width: 56rem) {
+		.pricing__grid {
 			grid-template-columns: 1fr;
 		}
 	}

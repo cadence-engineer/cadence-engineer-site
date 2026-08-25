@@ -43,3 +43,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Provider logos
+
+Assets: `src/lib/assets/providers/*.svg`, copied from official brand kits supplied for this site.
+
+OpenAI, Anthropic, Mistral AI, Novita AI, GitHub, monday.com, Jira, Atlassian, and Slack names and
+logos are trademarks or registered trademarks of their respective owners. Their inclusion identifies
+supported or proposed integrations and does not transfer ownership of the artwork or imply endorsement.

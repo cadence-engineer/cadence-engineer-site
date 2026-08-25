@@ -15,17 +15,14 @@
 </script>
 
 <Section>
-	<div
-		class="feature-showcase"
-		class:feature-showcase--card-left={cardPosition === 'left'}
-	>
+	<div class="feature-showcase" class:feature-showcase--card-left={cardPosition === 'left'}>
 		<div class="feature-showcase__description">
 			<header>
-				<h2>{feature}</h2>
-				<h3>{caption}</h3>
+				<h2 class="type-component-heading">{feature}</h2>
+				<h3 class="type-section-title">{caption}</h3>
 			</header>
 
-			<p>{description}</p>
+			<p class="type-body">{description}</p>
 		</div>
 
 		<div class="feature-showcase__card">
@@ -71,14 +68,6 @@
 	.feature-showcase__description h3,
 	.feature-showcase__description p {
 		margin: 0;
-	}
-
-	.feature-showcase__description h2 {
-		font-size: 1rem;
-	}
-
-	.feature-showcase__description h3 {
-		font-size: 2rem;
 	}
 
 	.feature-showcase__card {

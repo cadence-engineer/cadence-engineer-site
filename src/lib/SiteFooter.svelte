@@ -13,7 +13,9 @@
 
 <footer class="site-footer">
 	<nav aria-label="Legal and contact navigation">
-		{#each links as link}
+		{#each links as link (link.href)}
+			<!-- These base-prefixed static-page URLs are deployment-safe and cannot use route resolution. -->
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a href={`${base}${link.href}`}>{link.label}</a>
 		{/each}
 	</nav>
@@ -47,5 +49,4 @@
 		text-decoration: underline;
 		text-underline-offset: 0.2em;
 	}
-
 </style>

@@ -30,7 +30,7 @@
 		border-radius: 1rem;
 		padding: 1rem;
 		background: var(--brand-color-white);
-		box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+		box-shadow: var(--shadow-card);
 		color: var(--color-foreground);
 	}
 

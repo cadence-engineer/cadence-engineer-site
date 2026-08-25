@@ -4,10 +4,13 @@
 	type Props = {
 		children?: Snippet;
 		class?: string;
+		variant?: 'default' | 'inverse';
 	};
 
-	let { children, class: className = '' }: Props = $props();
-	let classes = $derived(['feature-card', className].filter(Boolean).join(' '));
+	let { children, class: className = '', variant = 'default' }: Props = $props();
+	let classes = $derived(
+		['feature-card', `feature-card--${variant}`, className].filter(Boolean).join(' ')
+	);
 </script>
 
 <div class={classes}>
@@ -21,8 +24,17 @@
 		flex: 1 1 auto;
 		width: 100%;
 		border-radius: 3rem;
+		box-shadow: var(--shadow-card);
+	}
+
+	.feature-card--default {
 		background: var(--brand-color-white);
-		box-shadow: 0 0 1rem rgb(0 0 0 / 10%);
+		color: var(--brand-color-black);
+	}
+
+	.feature-card--inverse {
+		background: var(--brand-color-black);
+		color: var(--brand-color-white);
 	}
 
 	@supports (corner-shape: squircle) {

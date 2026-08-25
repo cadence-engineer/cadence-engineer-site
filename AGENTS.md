@@ -32,7 +32,9 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 Verified on August 25, 2026:
 
-- `/` contains the home-page hero, Daily and Chat feature showcases, and the three plan cards.
+- `/` contains the home-page hero, Daily and Chat feature showcases, AI-provider and connected-tool
+  logo grids, and the Basic, Premium, and Enterprise pricing cards. These public pricing cards are a
+  proposal and do not describe the API's currently implemented plans.
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
   pages.
 - `static/404.html` is the lightweight static response for unknown paths; `Staticfile` disables SPA
@@ -42,8 +44,13 @@ Verified on August 25, 2026:
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `src/routes/layout.css` contains the global brand foundation.
 - `src/lib/` contains the reusable layout, feature, card, button, and chat UI components.
+- `src/lib/ProviderSection.svelte` composes provider-section copy with the shared responsive
+  `LogoGrid`. `src/lib/PricingCard.svelte` owns pricing composition and plan-detail groups while
+  selecting shared `FeatureCard`, `Button`, and `Pill` variants for Basic, Premium, and Enterprise.
 - `src/lib/BrandLogo.svelte` is the shared logo component.
 - `src/lib/assets/` contains only production assets needed by this site, copied from `cadence-engineer-brand` where applicable.
+- `src/lib/assets/providers/` contains the official provider logo SVGs supplied for the home page;
+  keep their artwork intact and their attribution synchronized with `THIRD_PARTY_NOTICES.md`.
 
 Add new pages and components deliberately as the redesign progresses.
 
@@ -73,7 +80,7 @@ The core palette is:
 - Black: `#000000`
 - White: `#FFFFFF`
 - Pink: `#EF406C`
-- Teal: `#1FDBAC`
+- Teal: `#1CC59A`
 - Red: `#FF383C`, reserved for dangerous or destructive actions
 - Light grey: `#F2F2F2`
 
@@ -155,6 +162,10 @@ The site should feel technical, credible, structured, and approachable.
   owning component.
 - Keep page-specific composition and layout close to the page. A page must not recreate or override
   the visual styling of typography, buttons, links, inputs, cards, modals, or icon controls.
+- If requested work introduces a missing reusable pattern, first promote it into the canonical brand
+  contract, semantic tokens, and a shared `src/lib/` component in the same change. Do this
+  automatically; do not wait for the user to repeat the consistency requirement. Route CSS may own
+  only page composition and responsive placement unless the user explicitly requests an exception.
 - Favor accessible semantic HTML and visible keyboard focus.
 - Respect reduced-motion preferences.
 - Use Svelte 5 runes and the existing project conventions.
@@ -179,6 +190,9 @@ Both the public site and web application implement the same canonical component 
 - Cards are white with normal `2rem` padding, `3rem` fallback radius, `6rem` squircle radius, and a
   `0 0 1rem` black-at-10% shadow. Modals use that exact card surface and differ only through the
   documented stronger shadow. Danger cards retain the card and add the semantic red treatment.
+- Pills are shared `2rem` non-interactive labels with `0.5rem 1rem` padding and named primary,
+  secondary, and inverse tones. Provider and partner marks use the shared maximum two-column
+  responsive logo grid; routes provide only content and placement.
 - People use `4rem` circles; organizations use `4rem` squircles; interface icons use approved Lucide
   geometry through `currentColor`.
 
