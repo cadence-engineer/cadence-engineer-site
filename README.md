@@ -6,7 +6,7 @@ system documented by
 
 ## Current implementation
 
-Verified on August 21, 2026, the home page contains the product hero, Daily and Chat feature
+Verified on August 25, 2026, the home page contains the product hero, Daily and Chat feature
 showcases, and Free, Base, and Premium plan cards. The shared layout supplies the announcement banner, header, and footer. Contact, cookies,
 imprint, privacy, and terms pages are also present. A static `404.html` handles unknown paths. The site
 remains entirely static and does not call the API.
@@ -74,3 +74,27 @@ Copy only the formats and individual interface icons used by the website. Keep t
 - Satoshi regular uses weight `500`.
 - Sentient regular uses weight `400`.
 - Headings and titles request weight `900`; Sentient resolves to its heaviest supplied weight, `700`.
+
+## Global component system
+
+The canonical component specification is
+[`cadence-engineer-brand/components/README.md`](../cadence-engineer-brand/components/README.md).
+The site consumes it through semantic tokens in `src/routes/layout.css` and reusable components in
+`src/lib/`. Pages compose those components and own layout only; they must not invent local versions of
+shared typography, buttons, links, inputs, cards, modals, or icon controls.
+
+| Component         | Canonical appearance                                                                                                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Typography        | Satoshi `500` interface text, Sentient `400` generated text, semantic bold headings; `2rem` section titles, `1rem` component/body/control text, `0.875rem` supporting text |
+| Button            | `2rem` high, `1rem` horizontal padding, compact squircle, pink/white primary, teal/black secondary, red/white danger, visible `2px` focus outline                          |
+| Icon button       | Transparent `1.5rem` square with a `1rem` current-color Lucide icon and light-grey hover                                                                                   |
+| Link/navigation   | Recognizable inline text links; `2rem` navigation controls with light-grey hover, pink/white active state, and subdued disabled state                                      |
+| Input/select      | `3rem` high, `0.5rem 1rem` padding, white compact-card squircle, black-at-10% shadow, pink focus outline; select uses the approved chevron                                 |
+| Chat composer     | `4rem` compound-input variant with `1rem` padding, standard surface shadow, and circular `2rem` send action                                                                |
+| Card              | White, normally `2rem` padding, `3rem` fallback radius, `6rem` squircle radius, `0 0 1rem rgb(0 0 0 / 10%)` shadow                                                         |
+| Modal/danger card | Modal retains the exact card surface and changes only to the documented stronger shadow; danger retains the card and adds semantic-red stroke/content/action treatment     |
+| Identity mark     | `4rem` circle for a person and `4rem` squircle for an organization                                                                                                         |
+
+All states belong to the shared component. A visual exception is valid only when explicitly requested
+by the user and documented with its reason and scope. Repeated exceptions must become named variants
+or coordinated changes to the brand specification and every consumer.

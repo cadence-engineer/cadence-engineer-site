@@ -30,7 +30,7 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 ## Current Baseline
 
-Verified on August 21, 2026:
+Verified on August 25, 2026:
 
 - `/` contains the home-page hero, Daily and Chat feature showcases, and the three plan cards.
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
@@ -63,6 +63,8 @@ The adjacent `cadence-engineer-brand` repository is the source of truth for bran
 - Copy approved Lucide SVGs from `cadence-engineer-brand/icon/lucide/` instead of adding the full icon package to this site.
 - Do not edit files in `cadence-engineer-brand` as a side effect of site work.
 - When replacing an asset with a newer brand version, verify that the copied file matches its source.
+- Read and follow `cadence-engineer-brand/components/README.md` for every reusable typography,
+  button, link, input, card, modal, icon-control, or identity pattern.
 
 ## Color System
 
@@ -147,14 +149,42 @@ The site should feel technical, credible, structured, and approachable.
 ## Implementation Rules
 
 - Prefer semantic design tokens over one-off values.
-- Keep global styles limited to brand foundations and true cross-page defaults.
-- Build reusable Svelte components for repeated patterns.
-- Keep page-specific layout and styling close to the page or component that owns it.
+- Keep global CSS responsible for brand foundations, semantic tokens, and cross-application component
+  variables.
+- Build reusable Svelte components for repeated patterns and keep their complete visual states in the
+  owning component.
+- Keep page-specific composition and layout close to the page. A page must not recreate or override
+  the visual styling of typography, buttons, links, inputs, cards, modals, or icon controls.
 - Favor accessible semantic HTML and visible keyboard focus.
 - Respect reduced-motion preferences.
 - Use Svelte 5 runes and the existing project conventions.
 - Preserve `BASE_PATH` compatibility; import bundled assets through Svelte/Vite rather than hardcoding root-relative deployment URLs.
 - Do not add a backend or client-side data layer for static content.
+
+## Global Component Contract
+
+Both the public site and web application implement the same canonical component system documented in
+`cadence-engineer-brand/components/README.md`:
+
+- Interface typography uses Satoshi `500`; generated content uses Sentient `400`; headings use the
+  semantic bold weight. Page and section titles are `2rem`, component headings/body/controls are
+  `1rem`, and supporting text is `0.875rem` unless the documented display role applies.
+- Buttons are `2rem` high with `1rem` horizontal padding and the shared compact squircle. Primary is
+  pink/white, secondary is teal/black, danger is red/white, and focus remains visibly outlined.
+- Navigation links use the same `2rem` control rhythm, light-grey hover, pink/white active state, and
+  subdued disabled state. Inline links retain a recognizable text-link affordance.
+- Form controls use the shared `3rem` white input surface, `0.5rem 1rem` padding, compact-card
+  squircle, black-at-10% shadow, and pink focus outline. The Chat composer is the documented `4rem`
+  compound-input variant.
+- Cards are white with normal `2rem` padding, `3rem` fallback radius, `6rem` squircle radius, and a
+  `0 0 1rem` black-at-10% shadow. Modals use that exact card surface and differ only through the
+  documented stronger shadow. Danger cards retain the card and add the semantic red treatment.
+- People use `4rem` circles; organizations use `4rem` squircles; interface icons use approved Lucide
+  geometry through `currentColor`.
+
+Do not introduce one-off colors, sizes, radii, shadows, or states. Divergence is allowed only when the
+user explicitly requests it; document the reason and scope in `README.md`. A repeated exception must
+become a named shared variant or a coordinated update to the brand contract and both applications.
 
 ## Documentation ownership
 
