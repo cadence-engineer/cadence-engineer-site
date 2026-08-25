@@ -70,7 +70,7 @@
 
 	.button--secondary {
 		background: var(--color-accent-secondary);
-		color: var(--brand-color-black);
+		color: var(--brand-color-white);
 	}
 
 	.button--danger {

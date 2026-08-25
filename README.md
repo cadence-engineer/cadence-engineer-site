@@ -95,7 +95,7 @@ shared typography, buttons, links, inputs, cards, modals, or icon controls.
 | Component         | Canonical appearance                                                                                                                                                       |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Typography        | Satoshi `500` interface text, Sentient `400` generated text, semantic bold headings; `2rem` section titles, `1rem` component/body/control text, `0.875rem` supporting text |
-| Button            | `2rem` high, `1rem` horizontal padding, compact squircle, pink/white primary, teal/black secondary, red/white danger, visible `2px` focus outline                          |
+| Button            | `2rem` high, `1rem` horizontal padding, compact squircle, pink/white primary, teal/white secondary, red/white danger, visible `2px` focus outline                          |
 | Icon button       | Transparent `1.5rem` square with a `1rem` current-color Lucide icon and light-grey hover                                                                                   |
 | Link/navigation   | Recognizable inline text links; `2rem` navigation controls with light-grey hover, pink/white active state, and subdued disabled state                                      |
 | Input/select      | `3rem` high, `0.5rem 1rem` padding, white compact-card squircle, black-at-10% shadow, pink focus outline; select uses the approved chevron                                 |

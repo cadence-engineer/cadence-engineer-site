@@ -181,7 +181,7 @@ Both the public site and web application implement the same canonical component 
   semantic bold weight. Page and section titles are `2rem`, component headings/body/controls are
   `1rem`, and supporting text is `0.875rem` unless the documented display role applies.
 - Buttons are `2rem` high with `1rem` horizontal padding and the shared compact squircle. Primary is
-  pink/white, secondary is teal/black, danger is red/white, and focus remains visibly outlined.
+  pink/white, secondary is teal/white, danger is red/white, and focus remains visibly outlined.
 - Navigation links use the same `2rem` control rhythm, light-grey hover, pink/white active state, and
   subdued disabled state. Inline links retain a recognizable text-link affordance.
 - Form controls use the shared `3rem` white input surface, `0.5rem 1rem` padding, compact-card
