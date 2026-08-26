@@ -73,4 +73,11 @@
 	.feature-showcase__card {
 		display: flex;
 	}
+
+	@media (max-width: 56rem) {
+		.feature-showcase,
+		.feature-showcase--card-left {
+			flex-direction: column;
+		}
+	}
 </style>
