@@ -65,13 +65,14 @@ HTTPS. Do not include `/signin` in `PUBLIC_APP_ORIGIN`; the site appends that ro
 
 `cadence-engineer-brand` is the source of truth. Required production assets are copied into this repository so the built website has no runtime dependency on GitHub or another asset host.
 
-| Site asset                                       | Brand source                                            |
-| ------------------------------------------------ | ------------------------------------------------------- |
-| `src/lib/assets/brand/cadence-engineer-icon.svg` | `cadence-engineer-brand/icon/cadence-engineer-icon.svg` |
-| `src/lib/assets/icons/*.svg`                     | `cadence-engineer-brand/icon/lucide/`                   |
-| `src/lib/assets/fonts/satoshi/`                  | `cadence-engineer-brand/typography/satoshi/`            |
-| `src/lib/assets/fonts/sentient/`                 | `cadence-engineer-brand/typography/sentient/`           |
-| `src/lib/assets/providers/*.svg`                 | User-supplied official provider brand kits              |
+| Site asset                                        | Brand source                                             |
+| ------------------------------------------------- | -------------------------------------------------------- |
+| `src/lib/assets/brand/cadence-engineer-whorl.svg` | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
+| `static/favicon.svg`                              | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
+| `src/lib/assets/icons/*.svg`                      | `cadence-engineer-brand/icon/lucide/`                    |
+| `src/lib/assets/fonts/satoshi/`                   | `cadence-engineer-brand/typography/satoshi/`             |
+| `src/lib/assets/fonts/sentient/`                  | `cadence-engineer-brand/typography/sentient/`            |
+| `src/lib/assets/providers/*.svg`                  | User-supplied official provider brand kits               |
 
 Copy only the formats and individual interface icons used by the website. Keep the relevant font and third-party icon notices with copied assets. Do not load brand files directly from repository URLs.
 

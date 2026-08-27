@@ -1,5 +1,5 @@
 <script lang="ts">
-	import icon from '$lib/assets/brand/cadence-engineer-icon.svg';
+	import icon from '$lib/assets/brand/cadence-engineer-whorl.svg';
 
 	type Props = {
 		alt?: string;
