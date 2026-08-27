@@ -40,7 +40,8 @@ Verified on August 27, 2026:
 - `static/404.html` is the lightweight static response for unknown paths; `Staticfile` disables SPA
   index fallback in Railpack so it is served with HTTP 404.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
-- The header derives its web-app sign-in link from the build-time `PUBLIC_APP_ORIGIN` setting.
+- The build-time `PUBLIC_APP_LINKS_ENABLED` setting controls the header Sign in link and the Basic
+  and Premium Get Started links. Their destination derives from `PUBLIC_APP_ORIGIN`.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `src/routes/layout.css` contains the global brand foundation.
 - `src/lib/` contains the reusable layout, feature, card, button, action-toolbar, and chat UI

@@ -44,17 +44,22 @@ pnpm check
 pnpm build
 ```
 
-The header's sign-in link points to `https://app.cadence.engineer/signin` by default. Set
+Links to the web application are disabled by default. Set `PUBLIC_APP_LINKS_ENABLED=true` to show the
+header's Sign in link and the Basic and Premium pricing cards' Get Started links. The Enterprise
+Contact link remains available regardless of this setting.
+
+When web-app links are enabled, they point to `https://app.cadence.engineer/signin` by default. Set
 `PUBLIC_APP_ORIGIN` to the web application's origin to override it. For example, a development site
 deployment can use:
 
 ```sh
+PUBLIC_APP_LINKS_ENABLED=true
 PUBLIC_APP_ORIGIN=https://develop.app.cadence.engineer
 ```
 
-This value is embedded into the static site at build time, so the site must be rebuilt after it
-changes. A hostname without a scheme is treated as HTTPS. Do not include `/signin` in the value; the
-site appends that route.
+These values are embedded into the static site at build time, so the site must be rebuilt after they
+change. Only the exact value `true` enables app links. A hostname without a scheme is treated as
+HTTPS. Do not include `/signin` in `PUBLIC_APP_ORIGIN`; the site appends that route.
 
 ## Brand assets
 

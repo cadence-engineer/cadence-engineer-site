@@ -12,3 +12,5 @@ function normalizeAppOrigin(value: string | undefined) {
 export const appOrigin = normalizeAppOrigin(import.meta.env.PUBLIC_APP_ORIGIN);
 
 export const signInUrl = `${appOrigin}/signin`;
+
+export const appLinksEnabled = import.meta.env.PUBLIC_APP_LINKS_ENABLED === 'true';

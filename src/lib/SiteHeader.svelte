@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { signInUrl } from '$lib/app';
+	import { appLinksEnabled, signInUrl } from '$lib/app';
 	import BrandLogo from './BrandLogo.svelte';
 	import Button from './Button.svelte';
 </script>
@@ -13,7 +13,9 @@
 			<BrandLogo alt="" />
 		</a>
 
-		<Button href={signInUrl}>Sign in</Button>
+		{#if appLinksEnabled}
+			<Button href={signInUrl}>Sign in</Button>
+		{/if}
 	</nav>
 </header>
 

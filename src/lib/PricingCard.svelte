@@ -9,8 +9,8 @@
 	};
 
 	type Props = {
-		actionHref: string;
-		actionLabel: string;
+		actionHref?: string;
+		actionLabel?: string;
 		name: string;
 		period?: string;
 		price: string;
@@ -36,7 +36,9 @@
 				<strong class="type-display">{price}</strong>
 				{#if period}<span>{period}</span>{/if}
 			</p>
-			<Button href={actionHref} variant={buttonVariant} width="full">{actionLabel}</Button>
+			{#if actionHref && actionLabel}
+				<Button href={actionHref} variant={buttonVariant} width="full">{actionLabel}</Button>
+			{/if}
 		</header>
 
 		<div class="pricing-card__details">

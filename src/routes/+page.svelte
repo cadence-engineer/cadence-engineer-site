@@ -10,7 +10,7 @@
 		Section,
 		UserMessage
 	} from '$lib';
-	import { signInUrl } from '$lib/app';
+	import { appLinksEnabled, signInUrl } from '$lib/app';
 	import anthropicLogo from '$lib/assets/providers/anthropic.svg';
 	import githubLogo from '$lib/assets/providers/github.svg';
 	import jiraLogo from '$lib/assets/providers/jira.svg';
@@ -130,8 +130,8 @@
 					name="Basic"
 					price="€30"
 					period="/ month"
-					actionLabel="Get Started"
-					actionHref={signInUrl}
+					actionLabel={appLinksEnabled ? 'Get Started' : undefined}
+					actionHref={appLinksEnabled ? signInUrl : undefined}
 					sections={[
 						{ label: 'Scope', items: ['1 organization', '1 user'] },
 						{ label: 'Features', items: ['Daily', 'Chat', '30 messages per day'] },
@@ -145,8 +145,8 @@
 					name="Premium"
 					price="€50"
 					period="/ month"
-					actionLabel="Get Started"
-					actionHref={signInUrl}
+					actionLabel={appLinksEnabled ? 'Get Started' : undefined}
+					actionHref={appLinksEnabled ? signInUrl : undefined}
 					sections={[
 						{ label: 'Scope', items: ['1 organization', '5 users'] },
 						{ label: 'Features', items: ['Daily', 'Chat', 'Unlimited messages per day'] },
