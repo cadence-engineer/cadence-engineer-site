@@ -1,74 +1,52 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import { base } from '$app/paths';
+	import CopyrightLabel from './CopyrightLabel.svelte';
 
-	const contactHref = resolve('/contact');
+	const links = [
+		{ href: '/contact/', label: 'Contact' },
+		{ href: '/cookies/', label: 'Cookies' },
+		{ href: '/privacy/', label: 'Privacy Policy' },
+		{ href: '/terms/', label: 'Terms of Service' },
+		{ href: '/imprint/', label: 'Imprint' }
+	];
 </script>
 
 <footer class="site-footer">
-	<nav class="footer-links" aria-label="Footer links">
-		<a href={contactHref}>Contact</a>
-		<a href={resolve('/cookies')}>Cookies</a>
-		<a href={resolve('/privacy')}>Privacy Policy</a>
-		<a href={resolve('/terms')}>Terms of Service</a>
+	<nav aria-label="Legal and contact navigation">
+		{#each links as link (link.href)}
+			<!-- These base-prefixed static-page URLs are deployment-safe and cannot use route resolution. -->
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a href={`${base}${link.href}`}>{link.label}</a>
+		{/each}
 	</nav>
 
-	<p>Cadence Engineer 2026</p>
+	<CopyrightLabel />
 </footer>
 
 <style>
 	.site-footer {
-		display: flex;
-		min-height: 92px;
-		align-items: stretch;
-		flex-direction: column;
-		justify-content: center;
-		gap: 28px;
-		padding: 24px var(--site-gutter, 42px) 36px;
-		color: var(--color-text);
-		font-size: var(--font-size-base);
-		font-weight: var(--font-weight-base);
-		line-height: 1.2;
+		display: grid;
+		gap: 1rem;
+		padding: 1rem;
 	}
 
-	.site-footer p {
-		align-self: flex-start;
-		margin: 0;
-	}
-
-	.footer-links {
+	.site-footer nav {
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: 42px;
 		width: 100%;
+		max-width: 75rem;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 1rem 2rem;
+		margin-inline: auto;
 	}
 
-	.footer-links a:hover {
-		color: var(--color-accent);
+	.site-footer a {
+		color: inherit;
+		text-decoration: none;
 	}
 
-	@media (max-width: 900px) {
-		.site-footer {
-			padding: 28px var(--site-gutter, 28px);
-		}
-
-		.footer-links {
-			gap: 18px 30px;
-		}
-	}
-
-	@media (max-width: 560px) {
-		.site-footer {
-			padding: 24px var(--site-gutter, 18px) 30px;
-			font-size: 16px;
-		}
-
-		.footer-links {
-			flex-direction: column;
-			align-items: flex-start;
-			justify-content: flex-start;
-			gap: 16px;
-		}
+	.site-footer a:hover {
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
 	}
 </style>

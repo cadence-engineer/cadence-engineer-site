@@ -4,175 +4,166 @@
 
 @font-face {
 	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi/Fonts/WEB/fonts/Satoshi-Variable.woff2') format('woff2');
+	src: url('../lib/assets/fonts/satoshi/Satoshi-Variable.woff2') format('woff2');
 	font-weight: 300 900;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: 'Satoshi';
-	src: url('/fonts/Satoshi/Fonts/WEB/fonts/Satoshi-VariableItalic.woff2') format('woff2');
-	font-weight: 300 900;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Zodiak';
-	src: url('/fonts/Zodiak/Fonts/WEB/fonts/Zodiak-Variable.woff2') format('woff2');
-	font-weight: 100 900;
+	font-family: 'Sentient';
+	src: url('../lib/assets/fonts/sentient/Sentient-Variable.woff2') format('woff2');
+	font-weight: 200 700;
 	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Zodiak';
-	src: url('/fonts/Zodiak/Fonts/WEB/fonts/Zodiak-VariableItalic.woff2') format('woff2');
-	font-weight: 100 900;
-	font-style: italic;
 	font-display: swap;
 }
 
 :root {
-	--color-surface: #ffffff;
-	--color-text: #050505;
-	--color-accent: #ef405c;
-	--color-text-inverse: #ffffff;
-	--color-muted: #8b8b8b;
-	--color-border: #ececec;
-	--color-hover: #f6f6f6;
-	--radius-control: 6px;
-	--site-content-width: 1200px;
-	--site-gutter: 42px;
-	--section-block-padding: 104px;
-	--font-size-base: 16px;
-	--font-size-banner: 15px;
-	--font-size-banner-mobile: 13px;
-	--font-weight-base: 600;
-	--font-weight-heading: 900;
-	--font-sans:
-		Satoshi, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	--font-serif: Zodiak, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+	--brand-color-black: #000000;
+	--brand-color-white: #ffffff;
+	--brand-color-pink: #ef406c;
+	--brand-color-teal: #1cc59a;
+	--brand-color-red: rgb(255 56 60);
+	--brand-color-light-grey: #f2f2f2;
 
-	font-family: var(--font-sans);
-	color: var(--color-text);
-	background: var(--color-surface);
-	font-size: var(--font-size-base);
-	font-weight: var(--font-weight-base);
+	--color-background: var(--brand-color-white);
+	--color-foreground: var(--brand-color-black);
+	--color-accent: var(--brand-color-pink);
+	--color-accent-secondary: var(--brand-color-teal);
+	--color-danger: var(--brand-color-red);
+	--color-interactive-hover: var(--brand-color-light-grey);
+	--color-accent-muted: rgb(239 64 108 / 30%);
+	--color-accent-secondary-muted: rgb(28 197 154 / 30%);
+	--color-inverse-muted: rgb(255 255 255 / 30%);
+
+	--shadow-surface: 0 0 0.5rem rgb(0 0 0 / 10%);
+	--shadow-card: 0 0 1rem rgb(0 0 0 / 10%);
+	--shadow-modal: 0 0 30rem 8rem rgb(0 0 0 / 40%);
+
+	--font-interface:
+		'Satoshi', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-generated: 'Sentient', ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+	--font-weight-interface-regular: 500;
+	--font-weight-generated-regular: 400;
+	--font-weight-regular: var(--font-weight-interface-regular);
+	--font-weight-bold: 900;
+}
+
+@theme inline {
+	--color-brand-black: var(--brand-color-black);
+	--color-brand-white: var(--brand-color-white);
+	--color-brand-pink: var(--brand-color-pink);
+	--color-brand-teal: var(--brand-color-teal);
+	--color-brand-light-grey: var(--brand-color-light-grey);
+	--font-sans: var(--font-interface);
+	--font-serif: var(--font-generated);
+}
+
+html {
+	background: var(--color-background);
+	color: var(--color-foreground);
+	font-family: var(--font-interface);
+	font-weight: var(--font-weight-regular);
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-html {
-	background: var(--color-surface);
-}
-
 body {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	grid-template-rows: auto auto 1fr auto;
 	min-width: 320px;
 	min-height: 100vh;
 	margin: 0;
-	background: var(--color-surface);
 }
 
 button,
 input,
+select,
 textarea {
 	font: inherit;
 }
 
+p,
 a {
-	color: inherit;
-	text-decoration: none;
+	font-weight: var(--font-weight-regular);
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+.title {
+	font-weight: var(--font-weight-bold);
 }
 
-.site-page {
-	display: grid;
-	min-height: 100dvh;
-	grid-template-rows: auto auto 1fr auto;
-	background: var(--color-surface);
-	color: var(--color-text);
+.font-interface {
+	font-family: var(--font-interface);
 }
 
-.site-content-section {
-	width: min(var(--site-content-width), 100%);
-	margin: 0 auto;
-	padding: var(--section-block-padding) var(--site-gutter);
+.font-generated,
+.ai-generated {
+	--font-weight-regular: var(--font-weight-generated-regular);
+
+	font-family: var(--font-generated);
+	font-weight: var(--font-weight-generated-regular);
 }
 
-.site-content-section h1 {
-	margin: 0;
-	font-size: clamp(34px, 5vw, 52px);
-	font-weight: var(--font-weight-heading);
-	letter-spacing: 0;
-	line-height: 1.08;
+.brand-logo {
+	display: block;
+	width: var(--brand-logo-size, 3rem);
+	height: auto;
+	flex: none;
 }
 
-.site-section-copy {
-	display: grid;
-	gap: 22px;
-	margin-top: 36px;
-	font-family: var(--font-serif);
-	font-size: 21px;
-	font-weight: var(--font-weight-base);
-	line-height: 1.5;
+.brand-logo--inverse {
+	filter: invert(1);
 }
 
-.site-section-copy p {
-	margin: 0;
+.type-display {
+	font-size: 4rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1;
 }
 
-.site-address {
-	display: grid;
-	gap: 10px;
-	margin-top: 36px;
-	font-style: normal;
-	font-size: 21px;
-	font-weight: var(--font-weight-base);
-	line-height: 1.5;
+.type-section-title {
+	font-size: 2rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.2;
 }
 
-.site-address strong {
-	font-weight: var(--font-weight-heading);
+.type-subheading {
+	font-size: 1.5rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.2;
 }
 
-.site-address a {
-	width: fit-content;
-	color: var(--color-accent);
+.type-component-heading {
+	font-size: 1rem;
+	font-weight: var(--font-weight-bold);
+	line-height: 1.25;
 }
 
-.site-address a:hover {
-	color: #e73553;
+.type-body {
+	font-size: 1rem;
+	font-weight: var(--font-weight-interface-regular);
+	line-height: 1.4;
 }
 
-@media (max-width: 900px) {
-	:root {
-		--site-gutter: 28px;
-		--section-block-padding: 72px;
-	}
+.type-supporting {
+	font-size: 0.875rem;
+	font-weight: var(--font-weight-interface-regular);
+	line-height: 1.4;
 }
 
-@media (max-width: 560px) {
-	:root {
-		--site-gutter: 18px;
-		--section-block-padding: 56px;
-	}
-
-	.site-content-section h1 {
-		font-size: 32px;
-	}
-
-	.site-section-copy,
-	.site-address {
-		margin-top: 28px;
-		font-size: 17px;
+@media (max-width: 40rem) {
+	.type-display--responsive {
+		font-size: 2.5rem;
 	}
 }

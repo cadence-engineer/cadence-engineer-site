@@ -1,30 +1,27 @@
 <script lang="ts">
-	import DevelopmentBanner from '$lib/DevelopmentBanner.svelte';
-	import SiteFooter from '$lib/SiteFooter.svelte';
-	import SiteHeader from '$lib/SiteHeader.svelte';
+	import { PageSection } from '$lib';
 </script>
 
 <svelte:head>
 	<title>Cookies | Cadence Engineer</title>
-	<meta name="description" content="Cadence Engineer cookie information." />
 </svelte:head>
 
-<main class="site-page">
-	<DevelopmentBanner />
-	<SiteHeader />
+<main>
+	<PageSection title="Cookies">
+		<p>
+			Cadence Engineer does not use cookies for analytics, advertising, profiling, or cross-site
+			tracking.
+		</p>
 
-	<section class="site-content-section" aria-labelledby="cookies-title">
-		<h1 id="cookies-title">Cookies</h1>
+		<p>
+			<strong>Authentication</strong><br />
+			We only use strictly necessary first-party cookies to authenticate users and maintain secure signed-in
+			sessions. These cookies are set when you sign in and are used only to provide the requested service.
+		</p>
 
-		<div class="site-section-copy">
-			<p>
-				We only use cookies that are needed to run this service. They keep you signed in and help
-				keep your account secure while you use the app.
-			</p>
-			<p>We do not use cookies for ads, analytics, or tracking you across other websites.</p>
-			<p>We also do not collect personal profile information through cookies.</p>
-		</div>
-	</section>
-
-	<SiteFooter />
+		<p>
+			Before public release, this page will list the name, provider, purpose, and storage duration
+			of every cookie used by Cadence Engineer.
+		</p>
+	</PageSection>
 </main>

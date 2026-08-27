@@ -1,100 +1,52 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import cadenceEngineerLogo from '$lib/assets/cadence-engineer-logo.svg';
-
-	const appAuthUrl = 'https://app.cadence.engineer/auth';
+	import { base } from '$app/paths';
+	import { appLinksEnabled, signInUrl } from '$lib/app';
+	import BrandLogo from './BrandLogo.svelte';
+	import Button from './Button.svelte';
 </script>
 
-<header class="site-header" aria-label="Site header">
-	<a class="brand-link" href={resolve('/')} aria-label="Cadence Engineer home">
-		<img src={cadenceEngineerLogo} alt="" aria-hidden="true" />
-	</a>
+<header class="site-header">
+	<nav aria-label="Primary navigation">
+		<!-- The base-prefixed static-home URL is deployment-safe and cannot use route resolution. -->
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+		<a class="home-link" href={`${base}/`} aria-label="Cadence Engineer home">
+			<BrandLogo alt="" />
+		</a>
 
-	<a class="button button-primary sign-in-button" href={appAuthUrl}>Sign In</a>
+		{#if appLinksEnabled}
+			<Button href={signInUrl}>Sign in</Button>
+		{/if}
+	</nav>
 </header>
 
 <style>
 	.site-header {
 		display: flex;
-		min-height: 128px;
+		min-height: 4rem;
 		align-items: center;
+		box-sizing: border-box;
+		padding-inline: 1rem;
+	}
+
+	.site-header nav,
+	.site-header .home-link {
+		display: flex;
+		align-items: center;
+	}
+
+	.site-header nav {
+		width: 100%;
+		max-width: 75rem;
+		margin-inline: auto;
 		justify-content: space-between;
-		padding: 32px var(--site-gutter, 42px);
+		gap: 1rem;
 	}
 
-	.brand-link {
-		display: inline-flex;
-		width: 40px;
-		height: 40px;
-		align-items: center;
-		justify-content: center;
+	.site-header .home-link {
+		color: inherit;
 	}
 
-	.brand-link img {
-		display: block;
-		width: 40px;
-		height: 40px;
-	}
-
-	.button {
-		display: inline-flex;
-		min-height: 40px;
-		align-items: center;
-		justify-content: center;
-		border-radius: var(--radius-control);
-		font-size: 16px;
-		font-weight: var(--font-weight-base);
-		line-height: 1;
-		padding: 0 18px;
-		transition:
-			background-color 140ms ease,
-			color 140ms ease,
-			transform 140ms ease;
-	}
-
-	.button:hover {
-		transform: translateY(-1px);
-	}
-
-	.button-primary {
-		background: var(--color-accent);
-		color: var(--color-text-inverse);
-	}
-
-	.button-primary:hover {
-		background: #e73553;
-	}
-
-	.sign-in-button {
-		min-width: 92px;
-	}
-
-	@media (max-width: 900px) {
-		.site-header {
-			min-height: 104px;
-			padding-block: 24px;
-		}
-	}
-
-	@media (max-width: 560px) {
-		.site-header {
-			min-height: 86px;
-			padding-block: 20px;
-		}
-
-		.brand-link,
-		.brand-link img {
-			width: 40px;
-			height: 40px;
-		}
-
-		.button {
-			min-height: 40px;
-			padding: 0 18px;
-		}
-
-		.sign-in-button {
-			min-width: 92px;
-		}
+	.site-header :global(.brand-logo) {
+		--brand-logo-size: 2rem;
 	}
 </style>

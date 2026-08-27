@@ -994,6 +994,7 @@ packages:
       '@trivago/prettier-plugin-sort-imports': '*'
       '@zackad/prettier-plugin-twig': '*'
       prettier: ^3.0
+      prettier-plugin-astro: '*'
       prettier-plugin-css-order: '*'
       prettier-plugin-jsdoc: '*'
       prettier-plugin-marko: '*'
@@ -1016,6 +1017,8 @@ packages:
       '@trivago/prettier-plugin-sort-imports':
         optional: true
       '@zackad/prettier-plugin-twig':
+        optional: true
+      prettier-plugin-astro:
         optional: true
       prettier-plugin-css-order:
         optional: true
