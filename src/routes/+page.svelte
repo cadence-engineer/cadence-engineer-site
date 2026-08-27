@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {
+		ActionToolbar,
 		AiMessage,
 		ChatInput,
 		FeatureShowcase,
@@ -79,11 +80,11 @@
 				</p>
 			</div>
 
-			<div class="daily-summary__toolbar" role="toolbar" aria-label="Daily summary actions">
+			<ActionToolbar label="Daily summary actions">
 				<IconButton icon={copyIcon} label="Copy daily summary" />
 				<IconButton icon={thumbsUpIcon} label="Helpful" />
 				<IconButton icon={thumbsDownIcon} label="Not helpful" />
-			</div>
+			</ActionToolbar>
 		</article>
 	</FeatureShowcase>
 
@@ -207,12 +208,6 @@
 	.daily-summary__body {
 		display: grid;
 		gap: 1rem;
-	}
-
-	.daily-summary__toolbar {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
 	}
 
 	.chat-ui,

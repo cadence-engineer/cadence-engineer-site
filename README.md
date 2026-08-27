@@ -6,7 +6,7 @@ system documented by
 
 ## Current implementation
 
-Verified on August 25, 2026, the home page contains the product hero; Daily and Chat feature
+Verified on August 27, 2026, the home page contains the product hero; Daily and Chat feature
 showcases; AI-provider and connected-tool logo sections; and Basic, Premium, and Enterprise pricing
 cards. The displayed plans describe the current public-site proposal and are intentionally independent
 from the plans currently implemented by the API. The shared layout supplies the announcement banner,
@@ -97,6 +97,7 @@ shared typography, buttons, links, inputs, cards, modals, or icon controls.
 | Typography        | Satoshi `500` interface text, Sentient `400` generated text, semantic bold headings; `2rem` section titles, `1rem` component/body/control text, `0.875rem` supporting text |
 | Button            | `2rem` high, `1rem` horizontal padding, compact squircle, pink/white primary, teal/white secondary, red/white danger, visible `2px` focus outline                          |
 | Icon button       | Transparent `1.5rem` square with a `1rem` current-color Lucide icon and light-grey hover                                                                                   |
+| Action toolbar    | Horizontal, vertically centered shared controls with native toolbar semantics, an accessible label, and a `0.5rem` gap                                                     |
 | Link/navigation   | Recognizable inline text links; `2rem` navigation controls with light-grey hover, pink/white active state, and subdued disabled state                                      |
 | Input/select      | `3rem` high, `0.5rem 1rem` padding, white compact-card squircle, black-at-10% shadow, pink focus outline; select uses the approved chevron                                 |
 | Chat composer     | `4rem` compound-input variant with `1rem` padding, standard surface shadow, and circular `2rem` send action                                                                |

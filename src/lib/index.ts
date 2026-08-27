@@ -1,3 +1,4 @@
+export { default as ActionToolbar } from './ActionToolbar.svelte';
 export { default as AiMessage } from './AiMessage.svelte';
 export { default as BrandLogo } from './BrandLogo.svelte';
 export { default as Button } from './Button.svelte';

@@ -30,7 +30,7 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 ## Current Baseline
 
-Verified on August 25, 2026:
+Verified on August 27, 2026:
 
 - `/` contains the home-page hero, Daily and Chat feature showcases, AI-provider and connected-tool
   logo grids, and the Basic, Premium, and Enterprise pricing cards. These public pricing cards are a
@@ -43,7 +43,8 @@ Verified on August 25, 2026:
 - The header derives its web-app sign-in link from the build-time `PUBLIC_APP_ORIGIN` setting.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `src/routes/layout.css` contains the global brand foundation.
-- `src/lib/` contains the reusable layout, feature, card, button, and chat UI components.
+- `src/lib/` contains the reusable layout, feature, card, button, action-toolbar, and chat UI
+  components.
 - `src/lib/ProviderSection.svelte` composes provider-section copy with the shared responsive
   `LogoGrid`. `src/lib/PricingCard.svelte` owns pricing composition and plan-detail groups while
   selecting shared `FeatureCard`, `Button`, and `Pill` variants for Basic, Premium, and Enterprise.
@@ -182,6 +183,8 @@ Both the public site and web application implement the same canonical component 
   `1rem`, and supporting text is `0.875rem` unless the documented display role applies.
 - Buttons are `2rem` high with `1rem` horizontal padding and the shared compact squircle. Primary is
   pink/white, secondary is teal/white, danger is red/white, and focus remains visibly outlined.
+- Action toolbars arrange unchanged shared controls horizontally with native toolbar semantics, an
+  accessible label, and a `0.5rem` gap.
 - Navigation links use the same `2rem` control rhythm, light-grey hover, pink/white active state, and
   subdued disabled state. Inline links retain a recognizable text-link affordance.
 - Form controls use the shared `3rem` white input surface, `0.5rem 1rem` padding, compact-card
