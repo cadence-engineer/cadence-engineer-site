@@ -85,7 +85,7 @@ remains deterministic interface copy and therefore uses Satoshi.
 ## Typography
 
 - Satoshi is the interface font for human-written and deterministic content.
-- Sentient is reserved for AI- or LLM-generated content.
+- Sentient is reserved for AI-generated content.
 - Satoshi regular uses weight `500`.
 - Sentient regular uses weight `400`.
 - Headings and titles request weight `900`; Sentient resolves to its heaviest supplied weight, `700`.
