@@ -165,7 +165,7 @@
 						{ label: 'Scope', items: ['Fully customizable'] },
 						{ label: 'Features', items: ['All features'] },
 						{
-							label: 'LLM provider',
+							label: 'AI provider',
 							items: ['Fully self-hosted', 'or', 'Custom LLM endpoint']
 						},
 						{ label: 'Tools', items: ['Support for all available tools'] }
