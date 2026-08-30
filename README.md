@@ -69,6 +69,7 @@ HTTPS. Do not include `/signin` in `PUBLIC_APP_ORIGIN`; the site appends that ro
 | ------------------------------------------------- | -------------------------------------------------------- |
 | `src/lib/assets/brand/cadence-engineer-whorl.svg` | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
 | `static/favicon.svg`                              | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
+| `static/logo/whorl.png`                           | `cadence-engineer-brand/logo/cadence-engineer-whorl.png` |
 | `src/lib/assets/icons/*.svg`                      | `cadence-engineer-brand/icon/lucide/`                    |
 | `src/lib/assets/fonts/satoshi/`                   | `cadence-engineer-brand/typography/satoshi/`             |
 | `src/lib/assets/fonts/sentient/`                  | `cadence-engineer-brand/typography/sentient/`            |
@@ -85,7 +86,7 @@ remains deterministic interface copy and therefore uses Satoshi.
 ## Typography
 
 - Satoshi is the interface font for human-written and deterministic content.
-- Sentient is reserved for AI- or LLM-generated content.
+- Sentient is reserved for AI-generated content.
 - Satoshi regular uses weight `500`.
 - Sentient regular uses weight `400`.
 - Headings and titles request weight `900`; Sentient resolves to its heaviest supplied weight, `700`.

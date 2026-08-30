@@ -111,7 +111,7 @@
 
 	<ProviderSection
 		title="Choose your AI provider"
-		description="Select the AI provider that best fits your organization, with the flexibility to use the models and infrastructure you already trust. Custom enterprise plans also support your own hosted or self-hosted LLM."
+		description="Select the AI provider that best fits your organization, with the flexibility to use the models and infrastructure you already trust. Custom enterprise plans also support your own hosted or self-hosted AI models."
 		providers={aiProviders}
 	/>
 
@@ -165,8 +165,8 @@
 						{ label: 'Scope', items: ['Fully customizable'] },
 						{ label: 'Features', items: ['All features'] },
 						{
-							label: 'LLM provider',
-							items: ['Fully self-hosted', 'or', 'Custom LLM endpoint']
+							label: 'AI provider',
+							items: ['Fully self-hosted', 'or', 'Custom AI endpoint']
 						},
 						{ label: 'Tools', items: ['Support for all available tools'] }
 					]}
