@@ -69,6 +69,7 @@ HTTPS. Do not include `/signin` in `PUBLIC_APP_ORIGIN`; the site appends that ro
 | ------------------------------------------------- | -------------------------------------------------------- |
 | `src/lib/assets/brand/cadence-engineer-whorl.svg` | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
 | `static/favicon.svg`                              | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
+| `static/logo/whorl.png`                           | `cadence-engineer-brand/logo/cadence-engineer-whorl.png` |
 | `src/lib/assets/icons/*.svg`                      | `cadence-engineer-brand/icon/lucide/`                    |
 | `src/lib/assets/fonts/satoshi/`                   | `cadence-engineer-brand/typography/satoshi/`             |
 | `src/lib/assets/fonts/sentient/`                  | `cadence-engineer-brand/typography/sentient/`            |
