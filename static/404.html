@@ -10,70 +10,92 @@
 			:root {
 				color: #000;
 				background: #fff;
-				font-family: Satoshi, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				font-family:
+					Satoshi, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+					sans-serif;
 				font-synthesis: none;
 			}
 
-			* { box-sizing: border-box; }
+			* {
+				box-sizing: border-box;
+			}
 
 			body {
 				display: grid;
+				grid-template-rows: auto 1fr;
 				min-width: 320px;
 				min-height: 100vh;
 				margin: 0;
-				place-items: center;
-				padding: 1.5rem;
 			}
 
-			main { width: min(100%, 42rem); }
+			header {
+				display: flex;
+				width: 100%;
+				max-width: 75rem;
+				min-height: 4rem;
+				align-items: center;
+				margin-inline: auto;
+				padding-inline: 1rem;
+			}
 
-			.status {
-				margin: 0 0 1rem;
-				color: #ef406c;
-				font-size: 0.875rem;
-				font-weight: 900;
-				letter-spacing: 0.08em;
+			header a {
+				display: flex;
+				align-items: center;
+			}
+
+			header img {
+				display: block;
+				width: 2rem;
+				height: auto;
+			}
+
+			main {
+				display: grid;
+				width: 100%;
+				max-width: 75rem;
+				align-content: start;
+				margin-inline: auto;
+				padding: 3.5rem 1rem;
+				gap: 1rem;
+			}
+
+			h1,
+			p {
+				margin: 0;
 			}
 
 			h1 {
-				max-width: 11ch;
-				margin: 0;
-				font-size: clamp(3rem, 12vw, 7rem);
+				font-size: 2rem;
 				font-weight: 900;
-				letter-spacing: -0.07em;
-				line-height: 0.9;
+				line-height: 1.2;
 			}
 
-			p:not(.status) {
-				max-width: 34rem;
-				margin: 1.5rem 0 0;
-				font-size: clamp(1rem, 2vw, 1.25rem);
+			p,
+			a {
+				font-size: 1rem;
 				font-weight: 500;
-				line-height: 1.5;
+				line-height: 1.4;
 			}
 
 			a {
-				display: inline-flex;
-				align-items: center;
-				height: 2.75rem;
-				margin-top: 2rem;
-				border-radius: 1.375rem;
-				padding-inline: 1.25rem;
-				background: #ef406c;
-				color: #fff;
-				font-weight: 900;
-				text-decoration: none;
+				color: inherit;
 			}
 
-			a:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+			a:focus-visible {
+				outline: 2px solid #ef406c;
+				outline-offset: 2px;
+			}
 		</style>
 	</head>
 	<body>
+		<header>
+			<a href="/" aria-label="Cadence Engineer home">
+				<img src="/logo/whorl_no_whitespace.svg" alt="" />
+			</a>
+		</header>
 		<main>
-			<p class="status">404</p>
-			<h1>This page does not exist.</h1>
-			<p>The address may be incorrect, or the page may have moved.</p>
-			<a href="/">Back to home</a>
+			<h1>404 Not Found</h1>
+			<p>This page couldn't be found. <a href="/">Go back to the homepage.</a></p>
 		</main>
 	</body>
 </html>

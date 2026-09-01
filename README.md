@@ -11,7 +11,8 @@ showcases; AI-provider and connected-tool logo sections; and Basic, Premium, and
 cards. The displayed plans describe the current public-site proposal and are intentionally independent
 from the plans currently implemented by the API. The shared layout supplies the announcement banner,
 header, and footer. Contact, cookies, imprint, privacy, and terms pages are also present. A static
-`404.html` handles unknown paths. The site remains entirely static and does not call the API.
+`404.html` handles unknown paths with the public header and a concise link home. The site remains
+entirely static and does not call the API.
 
 ## Technical architecture
 

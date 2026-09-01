@@ -37,8 +37,8 @@ Verified on August 27, 2026:
   proposal and do not describe the API's currently implemented plans.
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
   pages.
-- `static/404.html` is the lightweight static response for unknown paths; `Staticfile` disables SPA
-  index fallback in Railpack so it is served with HTTP 404.
+- `static/404.html` is the branded static response for unknown paths; `Staticfile` disables SPA index
+  fallback in Railpack so it is served with HTTP 404.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
 - The build-time `PUBLIC_APP_LINKS_ENABLED` setting controls the header Sign in link and the Basic
   and Premium Get Started links. Their destination derives from `PUBLIC_APP_ORIGIN`.
