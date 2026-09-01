@@ -65,15 +65,17 @@ HTTPS. Do not include `/signin` in `PUBLIC_APP_ORIGIN`; the site appends that ro
 
 `cadence-engineer-brand` is the source of truth. Required production assets are copied into this repository so the built website has no runtime dependency on GitHub or another asset host.
 
-| Site asset                                        | Brand source                                             |
-| ------------------------------------------------- | -------------------------------------------------------- |
-| `src/lib/assets/brand/cadence-engineer-whorl.svg` | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
-| `static/favicon.svg`                              | `cadence-engineer-brand/logo/cadence-engineer-whorl.svg` |
-| `static/logo/whorl.png`                           | `cadence-engineer-brand/logo/cadence-engineer-whorl.png` |
-| `src/lib/assets/icons/*.svg`                      | `cadence-engineer-brand/icon/lucide/`                    |
-| `src/lib/assets/fonts/satoshi/`                   | `cadence-engineer-brand/typography/satoshi/`             |
-| `src/lib/assets/fonts/sentient/`                  | `cadence-engineer-brand/typography/sentient/`            |
-| `src/lib/assets/providers/*.svg`                  | User-supplied official provider brand kits               |
+| Site asset                                     | Brand source                                                |
+| ---------------------------------------------- | ----------------------------------------------------------- |
+| `src/lib/assets/brand/whorl_no_whitespace.svg` | `cadence-engineer-brand/logo/whorl_no_whitespace.svg`       |
+| `static/favicon.png`                           | `cadence-engineer-brand/logo/favicon.png`                   |
+| `static/logo/whorl.{svg,png}`                  | `cadence-engineer-brand/logo/whorl.{svg,png}`               |
+| `static/logo/whorl_no_whitespace.{svg,png}`    | `cadence-engineer-brand/logo/whorl_no_whitespace.{svg,png}` |
+| `static/logo/banner.png`                       | `cadence-engineer-brand/logo/banner.png`                    |
+| `src/lib/assets/icons/*.svg`                   | `cadence-engineer-brand/icon/lucide/`                       |
+| `src/lib/assets/fonts/satoshi/`                | `cadence-engineer-brand/typography/satoshi/`                |
+| `src/lib/assets/fonts/sentient/`               | `cadence-engineer-brand/typography/sentient/`               |
+| `src/lib/assets/providers/*.svg`               | User-supplied official provider brand kits                  |
 
 Copy only the formats and individual interface icons used by the website. Keep the relevant font and third-party icon notices with copied assets. Do not load brand files directly from repository URLs.
 

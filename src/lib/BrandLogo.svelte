@@ -1,5 +1,5 @@
 <script lang="ts">
-	import icon from '$lib/assets/brand/cadence-engineer-whorl.svg';
+	import icon from '$lib/assets/brand/whorl_no_whitespace.svg';
 
 	type Props = {
 		alt?: string;
