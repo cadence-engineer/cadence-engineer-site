@@ -194,6 +194,10 @@
 		margin: 0;
 	}
 
+	.hero h1 {
+		line-height: normal;
+	}
+
 	.daily-summary {
 		display: grid;
 		gap: 2rem;
