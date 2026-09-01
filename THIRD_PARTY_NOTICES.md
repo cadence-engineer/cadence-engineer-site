@@ -2,7 +2,7 @@
 
 ## Lucide Icons
 
-Assets: `src/lib/assets/icons/*.svg`, copied from `cadence-engineer-brand`
+Assets: `src/lib/assets/icons/*.svg`, copied from `brand`
 
 ISC License
 

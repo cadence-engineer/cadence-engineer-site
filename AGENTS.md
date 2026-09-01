@@ -2,7 +2,7 @@
 
 ## Project Purpose
 
-`cadence-engineer-site` is the static public website and acquisition experience for Cadence Engineer.
+`site` is the static public website and acquisition experience for Cadence Engineer.
 It implements the public-facing product story using the shared brand system.
 
 Cadence Engineer turns software-delivery activity into concise, understandable summaries and answers
@@ -13,7 +13,7 @@ Do not restore content, components, routes, or styling from earlier versions unl
 ## Required reading
 
 Before substantive work, read `README.md`, this file, and the relevant documentation in the adjacent
-`cadence-engineer-brand` repository when changing brand assets or visual rules.
+`brand` repository when changing brand assets or visual rules.
 
 ## Technical Architecture
 
@@ -50,7 +50,7 @@ Verified on August 27, 2026:
   `LogoGrid`. `src/lib/PricingCard.svelte` owns pricing composition and plan-detail groups while
   selecting shared `FeatureCard`, `Button`, and `Pill` variants for Basic, Premium, and Enterprise.
 - `src/lib/BrandLogo.svelte` is the shared logo component.
-- `src/lib/assets/` contains only production assets needed by this site, copied from `cadence-engineer-brand` where applicable.
+- `src/lib/assets/` contains only production assets needed by this site, copied from `brand` where applicable.
 - `src/lib/assets/providers/` contains the official provider logo SVGs supplied for the home page;
   keep their artwork intact and their attribution synchronized with `THIRD_PARTY_NOTICES.md`.
 
@@ -61,7 +61,7 @@ responsibilities change.
 
 ## Brand Source of Truth
 
-The adjacent `cadence-engineer-brand` repository is the source of truth for brand assets and guidance.
+The adjacent `brand` repository is the source of truth for brand assets and guidance.
 
 - Copy required production assets into this repository; do not load them from GitHub raw URLs.
 - Copy only formats that the website actually uses.
@@ -69,10 +69,10 @@ The adjacent `cadence-engineer-brand` repository is the source of truth for bran
 - Do not add italic font variants; the site does not use italic typography.
 - Keep each copied font license alongside its font files.
 - Prefer SVG for interface logos and icons.
-- Copy approved Lucide SVGs from `cadence-engineer-brand/icon/lucide/` instead of adding the full icon package to this site.
-- Do not edit files in `cadence-engineer-brand` as a side effect of site work.
+- Copy approved Lucide SVGs from `../brand/icon/lucide/` instead of adding the full icon package to this site.
+- Do not edit files in `brand` as a side effect of site work.
 - When replacing an asset with a newer brand version, verify that the copied file matches its source.
-- Read and follow `cadence-engineer-brand/components/README.md` for every reusable typography,
+- Read and follow `../brand/components/README.md` for every reusable typography,
   button, link, input, card, modal, icon-control, or identity pattern.
 
 ## Color System
@@ -177,7 +177,7 @@ The site should feel technical, credible, structured, and approachable.
 ## Global Component Contract
 
 Both the public site and web application implement the same canonical component system documented in
-`cadence-engineer-brand/components/README.md`:
+`../brand/components/README.md`:
 
 - Interface typography uses Satoshi `500`; generated content uses Sentient `400`; headings use the
   semantic bold weight. Page and section titles are `2rem`, component headings/body/controls are
@@ -212,7 +212,7 @@ become a named shared variant or a coordinated update to the brand contract and 
 - `THIRD_PARTY_NOTICES.md` and notices beside distributed assets own attribution for shipped third-party
   work.
 - Detailed palette, typography, logo, icon, and motion guidance belongs in
-  `cadence-engineer-brand`; document only how this site consumes or adapts it.
+  `brand`; document only how this site consumes or adapts it.
 - API contracts, persistence, application behavior, and generation design do not belong here.
 
 Update `README.md` in the same change when routes, rendering, dependencies, scripts, hosting

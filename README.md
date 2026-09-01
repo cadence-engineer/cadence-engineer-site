@@ -2,7 +2,7 @@
 
 The static public website for Cadence Engineer. The current implementation follows the shared visual
 system documented by
-[`cadence-engineer-brand`](https://github.com/cadence-engineer/cadence-engineer-brand).
+[`brand`](https://github.com/cadenceengineer/brand).
 
 ## Current implementation
 
@@ -63,19 +63,19 @@ HTTPS. Do not include `/signin` in `PUBLIC_APP_ORIGIN`; the site appends that ro
 
 ## Brand assets
 
-`cadence-engineer-brand` is the source of truth. Required production assets are copied into this repository so the built website has no runtime dependency on GitHub or another asset host.
+`brand` is the source of truth. Required production assets are copied into this repository so the built website has no runtime dependency on GitHub or another asset host.
 
-| Site asset                                     | Brand source                                                |
-| ---------------------------------------------- | ----------------------------------------------------------- |
-| `src/lib/assets/brand/whorl_no_whitespace.svg` | `cadence-engineer-brand/logo/whorl_no_whitespace.svg`       |
-| `static/favicon.png`                           | `cadence-engineer-brand/logo/favicon.png`                   |
-| `static/logo/whorl.{svg,png}`                  | `cadence-engineer-brand/logo/whorl.{svg,png}`               |
-| `static/logo/whorl_no_whitespace.{svg,png}`    | `cadence-engineer-brand/logo/whorl_no_whitespace.{svg,png}` |
-| `static/logo/banner.png`                       | `cadence-engineer-brand/logo/banner.png`                    |
-| `src/lib/assets/icons/*.svg`                   | `cadence-engineer-brand/icon/lucide/`                       |
-| `src/lib/assets/fonts/satoshi/`                | `cadence-engineer-brand/typography/satoshi/`                |
-| `src/lib/assets/fonts/sentient/`               | `cadence-engineer-brand/typography/sentient/`               |
-| `src/lib/assets/providers/*.svg`               | User-supplied official provider brand kits                  |
+| Site asset                                     | Brand source                                  |
+| ---------------------------------------------- | --------------------------------------------- |
+| `src/lib/assets/brand/whorl_no_whitespace.svg` | `../brand/logo/whorl_no_whitespace.svg`       |
+| `static/favicon.png`                           | `../brand/logo/favicon.png`                   |
+| `static/logo/whorl.{svg,png}`                  | `../brand/logo/whorl.{svg,png}`               |
+| `static/logo/whorl_no_whitespace.{svg,png}`    | `../brand/logo/whorl_no_whitespace.{svg,png}` |
+| `static/logo/banner.png`                       | `../brand/logo/banner.png`                    |
+| `src/lib/assets/icons/*.svg`                   | `../brand/icon/lucide/`                       |
+| `src/lib/assets/fonts/satoshi/`                | `../brand/typography/satoshi/`                |
+| `src/lib/assets/fonts/sentient/`               | `../brand/typography/sentient/`               |
+| `src/lib/assets/providers/*.svg`               | User-supplied official provider brand kits    |
 
 Copy only the formats and individual interface icons used by the website. Keep the relevant font and third-party icon notices with copied assets. Do not load brand files directly from repository URLs.
 
@@ -96,7 +96,7 @@ remains deterministic interface copy and therefore uses Satoshi.
 ## Global component system
 
 The canonical component specification is
-[`cadence-engineer-brand/components/README.md`](../cadence-engineer-brand/components/README.md).
+[`brand/components/README.md`](../brand/components/README.md).
 The site consumes it through semantic tokens in `src/routes/layout.css` and reusable components in
 `src/lib/`. Pages compose those components and own layout only; they must not invent local versions of
 shared typography, buttons, links, inputs, cards, modals, or icon controls.
