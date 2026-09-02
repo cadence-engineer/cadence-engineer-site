@@ -10,9 +10,9 @@ Verified on August 27, 2026, the home page contains the product hero; Daily and 
 showcases; AI-provider and connected-tool logo sections; and Basic, Premium, and Enterprise pricing
 cards. The displayed plans describe the current public-site proposal and are intentionally independent
 from the plans currently implemented by the API. The shared layout supplies the announcement banner,
-header, and footer. Contact, cookies, imprint, privacy, and terms pages are also present. A static
-`404.html` handles unknown paths with the public header and a concise link home. The site remains
-entirely static and does not call the API.
+header, and footer. Contact, cookies, imprint, privacy, and terms pages are also present. The
+prerendered `/404/` page handles unknown paths with the shared site layout and a concise link home.
+The site remains entirely static and does not call the API.
 
 ## Technical architecture
 
@@ -22,8 +22,10 @@ entirely static and does not call the API.
 - No backend or runtime server dependency
 - Vite development server
 - `pnpm build` generates deployable static files through `@sveltejs/adapter-static`
+- Generated asset and route URLs use the configured base path rather than page-relative paths, so
+  the shared 404 document works for unknown URLs at any nesting depth
 - `Staticfile` identifies `build/` as Railpack's static output and disables SPA index fallback
-- `Caddyfile` preserves HTTP 404 responses while serving the branded static `404.html` as their body
+- `Caddyfile` preserves HTTP 404 responses while serving the prerendered `/404/` page as their body
 
 ## Development
 

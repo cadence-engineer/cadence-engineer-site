@@ -39,7 +39,7 @@
 	try_files {path} {path}.html {path}/index.html
 
 	handle_errors {
-		rewrite * /404.html
+		rewrite * /404/index.html
 		file_server
 	}
 }

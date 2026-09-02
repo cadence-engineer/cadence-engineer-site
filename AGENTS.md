@@ -37,12 +37,15 @@ Verified on August 27, 2026:
   proposal and do not describe the API's currently implemented plans.
 - `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
   pages.
-- `static/404.html` is the branded static response for unknown paths. `Staticfile` disables SPA index
-  fallback, and the root `Caddyfile` serves that document as the body of HTTP 404 responses.
+- `/404/` is prerendered with the shared site layout and client rendering disabled. `Staticfile`
+  disables SPA index fallback, and the root `Caddyfile` serves that document as the body of HTTP 404
+  responses.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
 - The build-time `PUBLIC_APP_LINKS_ENABLED` setting controls the header Sign in link and the Basic
   and Premium Get Started links. Their destination derives from `PUBLIC_APP_ORIGIN`.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
+- `svelte.config.js` emits base-prefixed rather than page-relative paths so the shared 404 document
+  remains valid when served for unknown URLs at any nesting depth.
 - `src/routes/layout.css` contains the global brand foundation.
 - `src/lib/` contains the reusable layout, feature, card, button, action-toolbar, and chat UI
   components.
