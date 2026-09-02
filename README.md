@@ -22,7 +22,8 @@ entirely static and does not call the API.
 - No backend or runtime server dependency
 - Vite development server
 - `pnpm build` generates deployable static files through `@sveltejs/adapter-static`
-- `Staticfile` configures Railpack to serve `build/` and return the static `404.html` for unknown paths
+- `Staticfile` identifies `build/` as Railpack's static output and disables SPA index fallback
+- `Caddyfile` preserves HTTP 404 responses while serving the branded static `404.html` as their body
 
 ## Development
 

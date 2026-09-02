@@ -1,0 +1,45 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+
+	log {
+		format json
+	}
+
+	servers {
+		trusted_proxies static private_ranges 100.0.0.0/8
+	}
+}
+
+:{$PORT:80} {
+	log {
+		format json
+	}
+
+	respond /health 200
+
+	header {
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+
+	root * /app/build
+
+	file_server {
+		hide .git
+		hide .env*
+	}
+
+	encode {
+		gzip
+		zstd
+	}
+
+	try_files {path} {path}.html {path}/index.html
+
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
