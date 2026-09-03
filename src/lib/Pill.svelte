@@ -21,7 +21,7 @@
 		flex: none;
 		align-items: center;
 		box-sizing: border-box;
-		border-radius: 0.5rem;
+		border-radius: 1rem;
 		padding: 0.5rem 1rem;
 		font-size: 1rem;
 		font-weight: var(--font-weight-bold);
@@ -47,7 +47,7 @@
 
 	@supports (corner-shape: squircle) {
 		.pill {
-			border-radius: 1rem;
+			border-radius: 2rem;
 			corner-shape: squircle;
 		}
 	}
