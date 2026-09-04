@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact | Cadence Engineer</title>
+	<title>Contact | CadenceEngineer</title>
 </svelte:head>
 
 <main>

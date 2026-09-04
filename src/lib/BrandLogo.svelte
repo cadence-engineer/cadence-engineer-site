@@ -7,7 +7,7 @@
 		inverse?: boolean;
 	};
 
-	let { alt = 'Cadence Engineer', class: className = '', inverse = false }: Props = $props();
+	let { alt = 'CadenceEngineer', class: className = '', inverse = false }: Props = $props();
 </script>
 
 <img

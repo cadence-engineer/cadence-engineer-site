@@ -4,7 +4,7 @@
 	};
 
 	let {
-		message = 'Cadence Engineer currently in development and is not intended for public use.'
+		message = 'CadenceEngineer currently in development and is not intended for public use.'
 	}: Props = $props();
 </script>
 

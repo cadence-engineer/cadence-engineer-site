@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Page not found | Cadence Engineer</title>
+	<title>Page not found | CadenceEngineer</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

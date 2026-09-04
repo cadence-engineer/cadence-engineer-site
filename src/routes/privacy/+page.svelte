@@ -3,11 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>Privacy Policy | Cadence Engineer</title>
+	<title>Privacy Policy | CadenceEngineer</title>
 </svelte:head>
 
 <main>
 	<PageSection title="Privacy Policy">
-		<p>Information about how Cadence Engineer handles personal data will be provided here.</p>
+		<p>Information about how CadenceEngineer handles personal data will be provided here.</p>
 	</PageSection>
 </main>

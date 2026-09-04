@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Imprint | Cadence Engineer</title>
+	<title>Imprint | CadenceEngineer</title>
 </svelte:head>
 
 <main>
@@ -16,8 +16,8 @@
 		</p>
 
 		<p>
-			Presentation and development of the Cadence Engineer software project.<br />
-			Cadence Engineer is currently under development and is not intended for public use.
+			Presentation and development of the CadenceEngineer software project.<br />
+			CadenceEngineer is currently under development and is not intended for public use.
 		</p>
 	</PageSection>
 </main>

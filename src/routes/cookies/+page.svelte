@@ -3,13 +3,13 @@
 </script>
 
 <svelte:head>
-	<title>Cookies | Cadence Engineer</title>
+	<title>Cookies | CadenceEngineer</title>
 </svelte:head>
 
 <main>
 	<PageSection title="Cookies">
 		<p>
-			Cadence Engineer does not use cookies for analytics, advertising, profiling, or cross-site
+			CadenceEngineer does not use cookies for analytics, advertising, profiling, or cross-site
 			tracking.
 		</p>
 
@@ -21,7 +21,7 @@
 
 		<p>
 			Before public release, this page will list the name, provider, purpose, and storage duration
-			of every cookie used by Cadence Engineer.
+			of every cookie used by CadenceEngineer.
 		</p>
 	</PageSection>
 </main>

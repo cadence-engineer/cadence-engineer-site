@@ -3,11 +3,11 @@
 </script>
 
 <svelte:head>
-	<title>Terms of Service | Cadence Engineer</title>
+	<title>Terms of Service | CadenceEngineer</title>
 </svelte:head>
 
 <main>
 	<PageSection title="Terms of Service">
-		<p>The terms governing the use of Cadence Engineer will be provided here.</p>
+		<p>The terms governing the use of CadenceEngineer will be provided here.</p>
 	</PageSection>
 </main>

@@ -3,7 +3,7 @@
 		owner?: string;
 	};
 
-	let { owner = 'Cadence Engineer' }: Props = $props();
+	let { owner = 'CadenceEngineer' }: Props = $props();
 	const year = new Date().getFullYear();
 </script>
 

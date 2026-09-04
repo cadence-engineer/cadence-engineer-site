@@ -1,6 +1,6 @@
-# Cadence Engineer Site
+# CadenceEngineer Site
 
-The static public website for Cadence Engineer. The current implementation follows the shared visual
+The static public website for CadenceEngineer. The current implementation follows the shared visual
 system documented by
 [`brand`](https://github.com/cadenceengineer/brand).
 

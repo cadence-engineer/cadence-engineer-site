@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>Cadence Engineer</title>
+	<title>CadenceEngineer</title>
 </svelte:head>
 
 <main>
@@ -57,7 +57,7 @@
 
 			<div class="daily-summary__body">
 				<p>
-					Yesterday, the Daily feature was completed and released in Cadence Engineer. It now brings
+					Yesterday, the Daily feature was completed and released in CadenceEngineer. It now brings
 					activity from GitHub and monday.com together in one clear update.
 				</p>
 
@@ -84,7 +84,7 @@
 		cardPosition="left"
 		feature="Chat"
 		caption="Go ahead. Ask away."
-		description="Ask about a feature, project, or anything happening across your organization. Cadence Engineer uses activity and summaries to explain what happened, why it matters, and where things stand."
+		description="Ask about a feature, project, or anything happening across your organization. CadenceEngineer uses activity and summaries to explain what happened, why it matters, and where things stand."
 	>
 		<div class="chat-ui">
 			<div class="chat-messages">
@@ -109,7 +109,7 @@
 
 	<ProviderSection
 		title="Connect your tools"
-		description="Bring the tools your organization already uses into one place. Connect your data sources to make their activity available in Cadence Engineer."
+		description="Bring the tools your organization already uses into one place. Connect your data sources to make their activity available in CadenceEngineer."
 		providers={toolProviders}
 	/>
 

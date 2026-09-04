@@ -2,10 +2,10 @@
 
 ## Project Purpose
 
-`site` is the static public website and acquisition experience for Cadence Engineer.
+`site` is the static public website and acquisition experience for CadenceEngineer.
 It implements the public-facing product story using the shared brand system.
 
-Cadence Engineer turns software-delivery activity into concise, understandable summaries and answers
+CadenceEngineer turns software-delivery activity into concise, understandable summaries and answers
 for managers, teams, and other business-facing stakeholders.
 
 Do not restore content, components, routes, or styling from earlier versions unless explicitly requested.
