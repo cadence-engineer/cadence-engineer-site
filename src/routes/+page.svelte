@@ -13,28 +13,20 @@
 	import { appLinksEnabled, signInUrl } from '$lib/app';
 	import anthropicLogo from '$lib/assets/providers/anthropic.svg';
 	import githubLogo from '$lib/assets/providers/github.svg';
-	import jiraLogo from '$lib/assets/providers/jira.svg';
-	import mistralLogo from '$lib/assets/providers/mistral.svg';
 	import mondayLogo from '$lib/assets/providers/monday.svg';
-	import novitaLogo from '$lib/assets/providers/novita.svg';
 	import openaiLogo from '$lib/assets/providers/openai.svg';
-	import slackLogo from '$lib/assets/providers/slack.svg';
 	import copyIcon from '$lib/assets/icons/copy.svg';
 	import thumbsDownIcon from '$lib/assets/icons/thumbs-down.svg';
 	import thumbsUpIcon from '$lib/assets/icons/thumbs-up.svg';
 
 	const aiProviders = [
 		{ name: 'OpenAI', logo: openaiLogo },
-		{ name: 'Anthropic', logo: anthropicLogo },
-		{ name: 'Mistral AI', logo: mistralLogo },
-		{ name: 'Novita AI', logo: novitaLogo }
+		{ name: 'Anthropic', logo: anthropicLogo }
 	];
 
 	const toolProviders = [
 		{ name: 'GitHub', logo: githubLogo },
-		{ name: 'monday.com', logo: mondayLogo },
-		{ name: 'Jira', logo: jiraLogo },
-		{ name: 'Slack', logo: slackLogo }
+		{ name: 'monday.com', logo: mondayLogo }
 	];
 </script>
 
