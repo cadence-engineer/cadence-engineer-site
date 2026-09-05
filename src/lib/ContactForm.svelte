@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import FormField from './FormField.svelte';
+	import Modal from './Modal.svelte';
 
 	type Topic = 'test_access' | 'question' | 'other';
 
@@ -34,6 +35,7 @@
 	let website = $state('');
 	let status = $state<'idle' | 'pending' | 'sent' | 'failed'>('idle');
 	let error = $state('');
+	let confirmationOpen = $state(false);
 
 	const isTestAccess = $derived(topic === 'test_access');
 
@@ -62,6 +64,7 @@
 			});
 			if (response.status === 202) {
 				status = 'sent';
+				confirmationOpen = true;
 				return;
 			}
 			if (response.status === 400) {
@@ -77,89 +80,84 @@
 	}
 </script>
 
-{#if status === 'sent'}
-	<div class="contact-form__confirmation" role="status">
+<Modal label="Message sent" bind:open={confirmationOpen} focusOnOpen>
+	<div class="contact-form__confirmation">
 		<h2 class="type-subheading">Thanks, your message is on its way.</h2>
-		{#if isTestAccess}
-			<p class="type-body">
-				I'll reply within two working days with an invitation. Installing CadenceEngineer takes
-				about five minutes and needs someone with administrator rights on your GitHub organization;
-				your first Daily is ready roughly half an hour later.
-			</p>
-		{:else}
-			<p class="type-body">I'll reply within two working days.</p>
-		{/if}
+		<p class="type-body">I'll reply within two working days with an invitation.</p>
+		<div class="contact-form__confirmation-actions">
+			<Button type="button" onclick={() => (confirmationOpen = false)}>Close</Button>
+		</div>
 	</div>
-{:else}
-	<form class="contact-form" onsubmit={submit} novalidate={false}>
-		<FormField label="Topic" name="topic" type="select" options={topics} bind:value={topic} />
+</Modal>
+
+<form class="contact-form" onsubmit={submit}>
+	<FormField label="Topic" name="topic" type="select" options={topics} bind:value={topic} />
+	<FormField
+		label="Name"
+		name="name"
+		autocomplete="name"
+		maxlength={120}
+		required
+		bind:value={name}
+	/>
+	<FormField
+		label="Work email"
+		name="email"
+		type="email"
+		autocomplete="email"
+		maxlength={254}
+		required
+		bind:value={email}
+	/>
+	<FormField
+		label="Company"
+		name="company"
+		autocomplete="organization"
+		maxlength={120}
+		bind:value={company}
+	/>
+	{#if isTestAccess}
 		<FormField
-			label="Name"
-			name="name"
-			autocomplete="name"
+			label="GitHub organization"
+			name="github_organization"
 			maxlength={120}
-			required
-			bind:value={name}
+			bind:value={githubOrganization}
 		/>
 		<FormField
-			label="Work email"
-			name="email"
-			type="email"
-			autocomplete="email"
-			maxlength={254}
-			required
-			bind:value={email}
+			label="Engineers on the team"
+			name="engineer_count"
+			type="select"
+			options={engineerCounts}
+			bind:value={engineerCount}
 		/>
-		<FormField
-			label="Company"
-			name="company"
-			autocomplete="organization"
-			maxlength={120}
-			bind:value={company}
+	{/if}
+	<FormField
+		label="Message"
+		name="message"
+		type="textarea"
+		maxlength={4000}
+		required
+		error={status === 'failed' ? error : undefined}
+		bind:value={message}
+	/>
+	<!-- Honeypot: people never see this field; automated senders tend to fill it. -->
+	<div class="contact-form__trap" aria-hidden="true">
+		<label for="contact-website">Website</label>
+		<input
+			id="contact-website"
+			name="website"
+			type="text"
+			tabindex="-1"
+			autocomplete="off"
+			bind:value={website}
 		/>
-		{#if isTestAccess}
-			<FormField
-				label="GitHub organization"
-				name="github_organization"
-				maxlength={120}
-				bind:value={githubOrganization}
-			/>
-			<FormField
-				label="Engineers on the team"
-				name="engineer_count"
-				type="select"
-				options={engineerCounts}
-				bind:value={engineerCount}
-			/>
-		{/if}
-		<FormField
-			label="Message"
-			name="message"
-			type="textarea"
-			maxlength={4000}
-			required
-			error={status === 'failed' ? error : undefined}
-			bind:value={message}
-		/>
-		<!-- Honeypot: people never see this field; automated senders tend to fill it. -->
-		<div class="contact-form__trap" aria-hidden="true">
-			<label for="contact-website">Website</label>
-			<input
-				id="contact-website"
-				name="website"
-				type="text"
-				tabindex="-1"
-				autocomplete="off"
-				bind:value={website}
-			/>
-		</div>
-		<div class="contact-form__actions">
-			<Button type="submit" disabled={status === 'pending'}>
-				{status === 'pending' ? 'Sending…' : 'Send'}
-			</Button>
-		</div>
-	</form>
-{/if}
+	</div>
+	<div class="contact-form__actions">
+		<Button type="submit" disabled={status === 'pending' || status === 'sent'}>
+			{status === 'pending' ? 'Sending…' : status === 'sent' ? 'Sent' : 'Send'}
+		</Button>
+	</div>
+</form>
 
 <style>
 	.contact-form {
@@ -185,12 +183,16 @@
 
 	.contact-form__confirmation {
 		display: grid;
-		max-width: 36rem;
 		gap: 1rem;
 	}
 
 	.contact-form__confirmation h2,
 	.contact-form__confirmation p {
 		margin: 0;
+	}
+
+	/* Brand: the modal's action group follows its content after a 2rem gap. */
+	.contact-form__confirmation-actions {
+		margin-top: 1rem;
 	}
 </style>

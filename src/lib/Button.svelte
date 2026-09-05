@@ -6,6 +6,7 @@
 		class?: string;
 		disabled?: boolean;
 		href?: string;
+		onclick?: (event: MouseEvent) => void;
 		type?: 'button' | 'submit' | 'reset';
 		variant?: 'danger' | 'inverse' | 'primary' | 'secondary';
 		width?: 'content' | 'full';
@@ -16,6 +17,7 @@
 		class: className = '',
 		disabled = false,
 		href,
+		onclick,
 		type = 'button',
 		variant = 'primary',
 		width = 'content'
@@ -33,7 +35,7 @@
 		{@render children()}
 	</a>
 {:else}
-	<button class={classes} {disabled} {type}>
+	<button class={classes} {disabled} {onclick} {type}>
 		{@render children()}
 	</button>
 {/if}

@@ -10,6 +10,7 @@ export { default as FeatureShowcase } from './FeatureShowcase.svelte';
 export { default as FormField } from './FormField.svelte';
 export { default as IconButton } from './IconButton.svelte';
 export { default as LogoGrid } from './LogoGrid.svelte';
+export { default as Modal } from './Modal.svelte';
 export { default as Pill } from './Pill.svelte';
 export { default as PageSection } from './PageSection.svelte';
 export { default as PricingCard } from './PricingCard.svelte';
