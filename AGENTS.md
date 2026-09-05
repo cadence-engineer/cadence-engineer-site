@@ -34,7 +34,8 @@ Verified on September 5, 2026:
 
 - `FeatureShowcase` takes `caption`, `description`, and an optional card position; there is no
   separate feature label above the section title.
-- `/` contains the home-page hero (headline, shared tagline, audience line), Daily and Chat feature
+- `/` contains the home-page hero (headline, shared tagline), an introduction section (what
+  CadenceEngineer is and who it is for), Daily and Chat feature
   showcases whose samples carry a `CitationsModal` (shared brackets `IconButton` opening the shared
   `Modal` with claim links, per the brand's Citations rule), the "Built to be checked" trust section,
   connected-tool then AI-provider logo grids, a numbered "How it works" section (numbers in the

@@ -6,8 +6,8 @@ system documented by
 
 ## Current implementation
 
-Verified on September 6, 2026, the home page contains the product hero with the shared tagline and
-audience line; Daily and Chat feature showcases whose samples open a Citations modal from the shared
+Verified on September 6, 2026, the home page contains the product hero with the shared tagline; a short
+introduction section describing CadenceEngineer and who it is for; Daily and Chat feature showcases whose samples open a Citations modal from the shared
 brackets action; a "Built to be checked" section with the three trust points (Citations, teams not
 people, nothing to maintain); connected-tool and AI-provider logo sections; a numbered three-step
 "How it works" section ending in the access call to action; section titles stand alone without

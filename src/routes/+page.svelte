@@ -131,13 +131,26 @@
 			</h1>
 			<div class="hero__copy">
 				<p class="type-body">{description}</p>
-				<p class="type-body">
-					For the people who need to understand technical work without living in technical tools:
-					founders, product managers, sales, customer success, designers, and leadership.
-				</p>
 			</div>
 		</div>
 	</section>
+
+	<Section>
+		<div class="intro">
+			<h2 class="type-section-title">Understand the technical side of your company.</h2>
+			<p class="type-body">
+				Work leaves evidence everywhere: pull requests in GitHub, tickets in Jira, boards in
+				monday.com. CadenceEngineer connects that evidence into one coherent account of what your
+				organization is doing and makes it available to everyone in it, not only to the people who
+				live in those tools.
+			</p>
+			<p class="type-body">
+				It is built for founders, product managers, sales, customer success, designers, and
+				leadership: anyone who needs to know what engineering is working on, why, and what comes
+				next, without asking for another status report.
+			</p>
+		</div>
+	</Section>
 
 	<FeatureShowcase
 		caption="Every day tells a story."
@@ -336,6 +349,22 @@
 		max-width: 48rem;
 		margin-inline: auto;
 		gap: 1rem;
+	}
+
+	.intro {
+		display: grid;
+		max-width: 48rem;
+		margin-inline: auto;
+		gap: 2rem;
+	}
+
+	.intro h2,
+	.intro p {
+		margin: 0;
+	}
+
+	.intro h2 {
+		text-align: center;
 	}
 
 	.chat-answer {
