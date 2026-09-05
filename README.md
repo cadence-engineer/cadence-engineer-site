@@ -54,7 +54,9 @@ CadenceEngineer is in early access. Set `PUBLIC_PRICING_ENABLED=true` at build t
 `/contact` carries the contact form. It posts JSON to the site's own `/api/contact`, which the
 `Caddyfile` reverse-proxies to the API's `POST /v1/contact` while attaching the shared
 `X-Contact-Site` secret the API requires; the site therefore never calls the API cross-origin and
-stays static. Set `CONTACT_API_ORIGIN` (for example `https://api.cadence.engineer`) and
+stays static. Set `CONTACT_API_ORIGIN` (for example `https://api.cadence.engineer` or the private
+`http://api.railway.internal:8080`; scheme, host, and optional port only, no trailing slash or path,
+because Caddy refuses upstreams with a path and the service then fails to start) and
 `CONTACT_SITE_SECRET` (the same value as the API's `CONTACT_SITE_SECRET`) in the site's runtime
 environment. For local development, the same two variables in `.env` make the Vite dev server proxy
 `/api/contact` to a local API. `?topic=test_access`, `question`, or `other` preselects the form's
