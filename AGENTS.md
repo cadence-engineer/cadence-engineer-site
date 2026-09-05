@@ -37,7 +37,8 @@ Verified on September 5, 2026:
   proposal and do not describe the API's currently implemented plans.
 - `/contact` carries `ContactForm`, composed from the shared `FormField` (text, email, select,
   textarea, error text), `Button` (now with the documented disabled state and an `onclick` prop),
-  and `Modal` (the documented modal card, ported from `web`), which shows the sent confirmation. The form posts JSON to
+  and `Modal` (the documented modal card, ported from `web`), which shows the sent confirmation
+  while the form is cleared for another message. The form posts JSON to
   the same-origin `/api/contact`; the `Caddyfile` reverse-proxies that path to the API's
   `POST /v1/contact` with the `X-Contact-Site` secret from `CONTACT_SITE_SECRET`, and
   `vite.config.ts` provides the same proxy for `pnpm dev` from `CONTACT_API_ORIGIN` and
