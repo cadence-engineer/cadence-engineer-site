@@ -9,8 +9,9 @@ system documented by
 Verified on September 6, 2026, the home page contains the product hero with the shared tagline and
 audience line; Daily and Chat feature showcases whose samples open a Citations modal from the shared
 brackets action; a "Built to be checked" section with the three trust points (Citations, teams not
-people, nothing to maintain); connected-tool and AI-provider logo sections; a three-step "How it
-works" section ending in the access call to action; and, behind `PUBLIC_PRICING_ENABLED`, the
+people, nothing to maintain); connected-tool and AI-provider logo sections; a numbered three-step
+"How it works" section ending in the access call to action; section titles stand alone without
+eyebrow labels; and, behind `PUBLIC_PRICING_ENABLED`, the
 Basic, Premium, and Enterprise pricing cards. The page sets a meta description and Open Graph and
 Twitter card tags; `static/og.png` is the 2400×1260 preview image and `PUBLIC_SITE_ORIGIN`
 (default `https://cadence.engineer`) is the absolute origin used in those tags. The displayed plans describe the current public-site proposal and are intentionally independent

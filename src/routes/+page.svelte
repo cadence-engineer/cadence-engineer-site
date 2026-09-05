@@ -9,7 +9,6 @@
 		FeatureCard,
 		FeatureShowcase,
 		IconButton,
-		Pill,
 		PricingCard,
 		ProviderSection,
 		Section,
@@ -132,7 +131,7 @@
 			</h1>
 			<div class="hero__copy">
 				<p class="type-body">{description}</p>
-				<p class="type-body hero__audience">
+				<p class="type-body">
 					For the people who need to understand technical work without living in technical tools:
 					founders, product managers, sales, customer success, designers, and leadership.
 				</p>
@@ -141,7 +140,6 @@
 	</section>
 
 	<FeatureShowcase
-		feature="Daily"
 		caption="Every day tells a story."
 		description="Daily turns your organization's activity into one concise update each morning. See what moved forward, what changed, and what needs attention next, without chasing updates or adding reporting work for anyone."
 	>
@@ -176,7 +174,6 @@
 
 	<FeatureShowcase
 		cardPosition="left"
-		feature="Chat"
 		caption="Go ahead. Ask away."
 		description="Ask about a feature, a project, or anything happening across your organization, in plain language. CadenceEngineer answers from the activity itself, says what it does not know, and links every claim to its source."
 	>
@@ -204,15 +201,12 @@
 
 	<Section>
 		<div class="feature-grid" aria-labelledby="trust-title">
-			<header class="feature-grid__header">
-				<h2 class="type-component-heading">Grounded</h2>
-				<h3 class="type-section-title" id="trust-title">Built to be checked.</h3>
-			</header>
+			<h2 class="type-section-title" id="trust-title">Built to be checked.</h2>
 			<div class="feature-grid__cards">
 				{#each trustPoints as point (point.title)}
 					<FeatureCard>
 						<div class="feature-grid__card">
-							<h4 class="type-component-heading">{point.title}</h4>
+							<h3 class="type-component-heading">{point.title}</h3>
 							<p class="type-body">{point.body}</p>
 						</div>
 					</FeatureCard>
@@ -235,17 +229,13 @@
 
 	<Section>
 		<div class="feature-grid" aria-labelledby="steps-title">
-			<header class="feature-grid__header">
-				<h2 class="type-component-heading">How it works</h2>
-				<h3 class="type-section-title" id="steps-title">Up and running in half an hour.</h3>
-			</header>
+			<h2 class="type-section-title" id="steps-title">Up and running in half an hour.</h2>
 			<ol class="feature-grid__cards feature-grid__cards--steps">
 				{#each steps as step, index (step.title)}
 					<li>
 						<FeatureCard>
 							<div class="feature-grid__card">
-								<Pill>Step {index + 1}</Pill>
-								<h4 class="type-component-heading">{step.title}</h4>
+								<h3 class="type-component-heading">{index + 1}. {step.title}</h3>
 								<p class="type-body">{step.body}</p>
 							</div>
 						</FeatureCard>
@@ -348,11 +338,6 @@
 		gap: 1rem;
 	}
 
-	.hero__audience {
-		color: var(--color-foreground);
-		opacity: 0.6;
-	}
-
 	.chat-answer {
 		display: grid;
 		gap: 1rem;
@@ -365,15 +350,12 @@
 		gap: 4rem;
 	}
 
-	.feature-grid__header {
-		display: grid;
-		gap: 0.5rem;
+	.feature-grid > h2 {
+		margin: 0;
 		text-align: center;
 	}
 
-	.feature-grid__header h2,
-	.feature-grid__header h3,
-	.feature-grid__card h4,
+	.feature-grid__card h3,
 	.feature-grid__card p {
 		margin: 0;
 	}

@@ -32,11 +32,13 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 Verified on September 5, 2026:
 
+- `FeatureShowcase` takes `caption`, `description`, and an optional card position; there is no
+  separate feature label above the section title.
 - `/` contains the home-page hero (headline, shared tagline, audience line), Daily and Chat feature
   showcases whose samples carry a `CitationsModal` (shared brackets `IconButton` opening the shared
   `Modal` with claim links, per the brand's Citations rule), the "Built to be checked" trust section,
-  connected-tool then AI-provider logo grids, a numbered "How it works" section using `Pill` step
-  labels and the access `Button`, and, behind `PUBLIC_PRICING_ENABLED`, the Basic, Premium, and
+  connected-tool then AI-provider logo grids, a numbered "How it works" section (numbers in the
+  card headings, no pills or eyebrow labels anywhere on the page) and the access `Button`, and, behind `PUBLIC_PRICING_ENABLED`, the Basic, Premium, and
   Enterprise pricing cards. These public pricing cards are a proposal and do not describe the API's
   currently implemented plans. The page sets description, Open Graph, and Twitter card metadata from
   `PUBLIC_SITE_ORIGIN` and `static/og.png`.
