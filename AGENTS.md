@@ -32,9 +32,16 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 Verified on September 5, 2026:
 
-- `/` contains the home-page hero, Daily and Chat feature showcases, AI-provider and connected-tool
-  logo grids, and the Basic, Premium, and Enterprise pricing cards. These public pricing cards are a
-  proposal and do not describe the API's currently implemented plans.
+- `/` contains the home-page hero (headline, shared tagline, audience line), Daily and Chat feature
+  showcases whose samples carry a `CitationsModal` (shared brackets `IconButton` opening the shared
+  `Modal` with claim links, per the brand's Citations rule), the "Built to be checked" trust section,
+  connected-tool then AI-provider logo grids, a numbered "How it works" section using `Pill` step
+  labels and the access `Button`, and, behind `PUBLIC_PRICING_ENABLED`, the Basic, Premium, and
+  Enterprise pricing cards. These public pricing cards are a proposal and do not describe the API's
+  currently implemented plans. The page sets description, Open Graph, and Twitter card metadata from
+  `PUBLIC_SITE_ORIGIN` and `static/og.png`.
+- `SiteBanner` announces early access and, while app links are disabled, links to
+  `/contact/?topic=test_access`. `IconButton` accepts an `onclick`.
 - `/contact` carries `ContactForm`, composed from the shared `FormField` (text, email, select,
   textarea, error text), `Button` (now with the documented disabled state and an `onclick` prop),
   and `Modal` (the documented modal card, ported from `web`), which shows the sent confirmation
