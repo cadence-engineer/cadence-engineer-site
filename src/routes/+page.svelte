@@ -243,7 +243,7 @@
 							<UserMessage>Who was slowest this week?</UserMessage>
 							<AiMessage>
 								I don't rate people. Here is how the checkout project moved this week: two of three
-								planned changes shipped, and the remaining one is waiting on review.
+								planned changes shipped.
 							</AiMessage>
 						</div>
 						<h3 class="type-component-heading">{trustPoints[1].title}</h3>
