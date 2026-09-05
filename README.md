@@ -48,6 +48,19 @@ pnpm check
 pnpm build
 ```
 
+The home page's Basic, Premium, and Enterprise pricing section is hidden by default while
+CadenceEngineer is in early access. Set `PUBLIC_PRICING_ENABLED=true` at build time to show it.
+
+`/contact` carries the contact form. It posts JSON to the site's own `/api/contact`, which the
+`Caddyfile` reverse-proxies to the API's `POST /v1/contact` while attaching the shared
+`X-Contact-Site` secret the API requires; the site therefore never calls the API cross-origin and
+stays static. Set `CONTACT_API_ORIGIN` (for example `https://api.cadence.engineer`) and
+`CONTACT_SITE_SECRET` (the same value as the API's `CONTACT_SITE_SECRET`) in the site's runtime
+environment. For local development, the same two variables in `.env` make the Vite dev server proxy
+`/api/contact` to a local API. `?topic=test_access`, `question`, or `other` preselects the form's
+topic; the header's Request access button links to the test-access variant whenever app links are
+disabled.
+
 Links to the web application are disabled by default. Set `PUBLIC_APP_LINKS_ENABLED=true` to show the
 header's Sign in link and the Basic and Premium pricing cards' Get Started links. The Enterprise
 Contact link remains available regardless of this setting.
@@ -112,7 +125,7 @@ shared typography, buttons, links, inputs, cards, modals, or icon controls.
 | Icon button       | Transparent `1.5rem` square with a `1rem` current-color Lucide icon and light-grey hover                                                                                   |
 | Action toolbar    | Horizontal, vertically centered shared controls with native toolbar semantics, an accessible label, and a `0.5rem` gap                                                     |
 | Link/navigation   | Recognizable inline text links; `2rem` navigation controls with light-grey hover, pink/white active state, and subdued disabled state                                      |
-| Input/select      | `3rem` high, `0.5rem 1rem` padding, white compact-card squircle, black-at-10% shadow, pink focus outline; select uses the approved chevron                                 |
+| Input/select      | `3rem` high, `0.5rem 1rem` padding, white compact-card squircle, black-at-10% shadow, pink focus outline; select uses the approved chevron; textarea shares the surface    |
 | Chat composer     | `4rem` compound-input variant with `1rem` padding, standard surface shadow, and circular `2rem` send action                                                                |
 | Card              | White, normally `2rem` padding, `3rem` fallback radius, `6rem` squircle radius, `0 0 1rem rgb(0 0 0 / 10%)` shadow                                                         |
 | Modal/danger card | Modal retains the exact card surface and changes only to the documented stronger shadow; danger retains the card and adds semantic-red stroke/content/action treatment     |

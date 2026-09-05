@@ -10,7 +10,7 @@
 		Section,
 		UserMessage
 	} from '$lib';
-	import { appLinksEnabled, signInUrl } from '$lib/app';
+	import { appLinksEnabled, pricingEnabled, signInUrl } from '$lib/app';
 	import anthropicLogo from '$lib/assets/providers/anthropic.svg';
 	import githubLogo from '$lib/assets/providers/github.svg';
 	import mondayLogo from '$lib/assets/providers/monday.svg';
@@ -113,59 +113,61 @@
 		providers={toolProviders}
 	/>
 
-	<Section>
-		<div class="pricing" aria-labelledby="pricing-title">
-			<h2 class="type-section-title" id="pricing-title">Pricing</h2>
+	{#if pricingEnabled}
+		<Section>
+			<div class="pricing" aria-labelledby="pricing-title">
+				<h2 class="type-section-title" id="pricing-title">Pricing</h2>
 
-			<div class="pricing__grid">
-				<PricingCard
-					name="Basic"
-					price="€30"
-					period="/ month"
-					actionLabel={appLinksEnabled ? 'Get Started' : undefined}
-					actionHref={appLinksEnabled ? signInUrl : undefined}
-					sections={[
-						{ label: 'Scope', items: ['1 organization', '1 user'] },
-						{ label: 'Features', items: ['Daily', 'Chat', '30 messages per day'] },
-						{ label: 'AI providers', items: ['OpenAI', 'Anthropic', 'Mistral', 'Novita'] },
-						{ label: 'Tools', items: ['GitHub', 'monday.com'] }
-					]}
-				/>
+				<div class="pricing__grid">
+					<PricingCard
+						name="Basic"
+						price="€30"
+						period="/ month"
+						actionLabel={appLinksEnabled ? 'Get Started' : undefined}
+						actionHref={appLinksEnabled ? signInUrl : undefined}
+						sections={[
+							{ label: 'Scope', items: ['1 organization', '1 user'] },
+							{ label: 'Features', items: ['Daily', 'Chat', '30 messages per day'] },
+							{ label: 'AI providers', items: ['OpenAI', 'Anthropic', 'Mistral', 'Novita'] },
+							{ label: 'Tools', items: ['GitHub', 'monday.com'] }
+						]}
+					/>
 
-				<PricingCard
-					tone="premium"
-					name="Premium"
-					price="€50"
-					period="/ month"
-					actionLabel={appLinksEnabled ? 'Get Started' : undefined}
-					actionHref={appLinksEnabled ? signInUrl : undefined}
-					sections={[
-						{ label: 'Scope', items: ['1 organization', '5 users'] },
-						{ label: 'Features', items: ['Daily', 'Chat', 'Unlimited messages per day'] },
-						{ label: 'AI providers', items: ['OpenAI', 'Anthropic', 'Mistral', 'Novita'] },
-						{ label: 'Tools', items: ['GitHub', 'monday.com', 'Jira', 'Slack'] }
-					]}
-				/>
+					<PricingCard
+						tone="premium"
+						name="Premium"
+						price="€50"
+						period="/ month"
+						actionLabel={appLinksEnabled ? 'Get Started' : undefined}
+						actionHref={appLinksEnabled ? signInUrl : undefined}
+						sections={[
+							{ label: 'Scope', items: ['1 organization', '5 users'] },
+							{ label: 'Features', items: ['Daily', 'Chat', 'Unlimited messages per day'] },
+							{ label: 'AI providers', items: ['OpenAI', 'Anthropic', 'Mistral', 'Novita'] },
+							{ label: 'Tools', items: ['GitHub', 'monday.com', 'Jira', 'Slack'] }
+						]}
+					/>
 
-				<PricingCard
-					tone="enterprise"
-					name="Enterprise"
-					price="Custom"
-					actionLabel="Contact"
-					actionHref="mailto:dominik.strasser@cadence.engineer"
-					sections={[
-						{ label: 'Scope', items: ['Fully customizable'] },
-						{ label: 'Features', items: ['All features'] },
-						{
-							label: 'AI provider',
-							items: ['Fully self-hosted', 'or', 'Custom AI endpoint']
-						},
-						{ label: 'Tools', items: ['Support for all available tools'] }
-					]}
-				/>
+					<PricingCard
+						tone="enterprise"
+						name="Enterprise"
+						price="Custom"
+						actionLabel="Contact"
+						actionHref="mailto:dominik.strasser@cadence.engineer"
+						sections={[
+							{ label: 'Scope', items: ['Fully customizable'] },
+							{ label: 'Features', items: ['All features'] },
+							{
+								label: 'AI provider',
+								items: ['Fully self-hosted', 'or', 'Custom AI endpoint']
+							},
+							{ label: 'Tools', items: ['Support for all available tools'] }
+						]}
+					/>
+				</div>
 			</div>
-		</div>
-	</Section>
+		</Section>
+	{/if}
 </main>
 
 <style>

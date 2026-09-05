@@ -24,6 +24,25 @@
 		-Server
 	}
 
+	# The contact form posts to its own origin; Caddy forwards it to the API and attaches the
+	# shared secret the API requires, so the API never has to accept cross-origin requests.
+	handle /api/contact {
+		@notPost not method POST
+		respond @notPost 405
+
+		request_body {
+			max_size 16KB
+		}
+
+		rewrite * /v1/contact
+
+		reverse_proxy {$CONTACT_API_ORIGIN} {
+			header_up Host {upstream_hostport}
+			header_up X-Contact-Site {$CONTACT_SITE_SECRET}
+			header_up -Cookie
+		}
+	}
+
 	root * /app/build
 
 	file_server {

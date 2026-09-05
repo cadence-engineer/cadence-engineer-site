@@ -4,6 +4,7 @@
 	type Props = {
 		children: Snippet;
 		class?: string;
+		disabled?: boolean;
 		href?: string;
 		type?: 'button' | 'submit' | 'reset';
 		variant?: 'danger' | 'inverse' | 'primary' | 'secondary';
@@ -13,6 +14,7 @@
 	let {
 		children,
 		class: className = '',
+		disabled = false,
 		href,
 		type = 'button',
 		variant = 'primary',
@@ -31,7 +33,7 @@
 		{@render children()}
 	</a>
 {:else}
-	<button class={classes} {type}>
+	<button class={classes} {disabled} {type}>
 		{@render children()}
 	</button>
 {/if}
@@ -85,6 +87,13 @@
 
 	.button:hover {
 		filter: brightness(0.96);
+	}
+
+	/* Brand: keep shape and colors, remove the pointer affordance, approximately 55% opacity. */
+	.button:disabled {
+		cursor: not-allowed;
+		opacity: 0.55;
+		filter: none;
 	}
 
 	@supports (corner-shape: squircle) {

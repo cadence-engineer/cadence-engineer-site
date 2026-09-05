@@ -15,6 +15,8 @@
 
 		{#if appLinksEnabled}
 			<Button href={signInUrl}>Sign in</Button>
+		{:else}
+			<Button href={`${base}/contact/?topic=test_access`}>Request access</Button>
 		{/if}
 	</nav>
 </header>
