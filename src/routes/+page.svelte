@@ -154,7 +154,7 @@
 
 	<FeatureShowcase
 		caption="Every day tells a story."
-		description="Daily turns your organization's activity into one concise update each morning. See what moved forward, what changed, and what needs attention next, without chasing updates or adding reporting work for anyone."
+		description="CadenceEngineer turns your organization's activity into one concise update each morning, the Daily. See what moved forward, what changed, and what needs attention next, without chasing updates or adding reporting work for anyone."
 	>
 		<article class="daily-summary font-generated">
 			<h4 class="type-section-title">Good morning, Dominik</h4>
