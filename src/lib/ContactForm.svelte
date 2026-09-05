@@ -33,7 +33,7 @@
 	let githubOrganization = $state('');
 	let engineerCount = $state('1-5');
 	let website = $state('');
-	let status = $state<'idle' | 'pending' | 'sent' | 'failed'>('idle');
+	let status = $state<'idle' | 'pending' | 'failed'>('idle');
 	let error = $state('');
 	let confirmationOpen = $state(false);
 
@@ -63,7 +63,14 @@
 				body: JSON.stringify(payload)
 			});
 			if (response.status === 202) {
-				status = 'sent';
+				name = '';
+				email = '';
+				company = '';
+				message = '';
+				githubOrganization = '';
+				engineerCount = '1-5';
+				website = '';
+				status = 'idle';
 				confirmationOpen = true;
 				return;
 			}
@@ -153,8 +160,8 @@
 		/>
 	</div>
 	<div class="contact-form__actions">
-		<Button type="submit" disabled={status === 'pending' || status === 'sent'}>
-			{status === 'pending' ? 'Sending…' : status === 'sent' ? 'Sent' : 'Send'}
+		<Button type="submit" disabled={status === 'pending'}>
+			{status === 'pending' ? 'Sending…' : 'Send'}
 		</Button>
 	</div>
 </form>
