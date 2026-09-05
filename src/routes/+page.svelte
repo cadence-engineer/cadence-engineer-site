@@ -19,6 +19,7 @@
 	import githubLogo from '$lib/assets/providers/github.svg';
 	import mondayLogo from '$lib/assets/providers/monday.svg';
 	import openaiLogo from '$lib/assets/providers/openai.svg';
+	import bracketsIcon from '$lib/assets/icons/brackets.svg';
 	import copyIcon from '$lib/assets/icons/copy.svg';
 	import thumbsDownIcon from '$lib/assets/icons/thumbs-down.svg';
 	import thumbsUpIcon from '$lib/assets/icons/thumbs-up.svg';
@@ -216,14 +217,56 @@
 		<div class="feature-grid" aria-labelledby="trust-title">
 			<h2 class="type-section-title" id="trust-title">Built to be checked.</h2>
 			<div class="feature-grid__cards">
-				{#each trustPoints as point (point.title)}
-					<FeatureCard>
-						<div class="feature-grid__card">
-							<h3 class="type-component-heading">{point.title}</h3>
-							<p class="type-body">{point.body}</p>
+				<FeatureCard>
+					<div class="feature-grid__card feature-grid__card--illustrated">
+						<div class="trust-visual" aria-hidden="true">
+							<p class="trust-visual__surface font-generated">
+								Yesterday, the release moved to Thursday after the payment review found two blocking
+								issues.
+							</p>
+							<p class="trust-visual__surface trust-visual__surface--source type-supporting">
+								<span class="trust-visual__icon" style:--icon-source={`url("${bracketsIcon}")`}
+								></span>
+								<span>
+									<u>The release moved to Thursday.</u><br />
+									GitHub · api · pull request #142
+								</span>
+							</p>
 						</div>
-					</FeatureCard>
-				{/each}
+						<h3 class="type-component-heading">{trustPoints[0].title}</h3>
+						<p class="type-body">{trustPoints[0].body}</p>
+					</div>
+				</FeatureCard>
+				<FeatureCard>
+					<div class="feature-grid__card feature-grid__card--illustrated">
+						<div class="trust-visual trust-visual--chat" aria-hidden="true">
+							<UserMessage>Who was slowest this week?</UserMessage>
+							<AiMessage>
+								I don't rate people. Here is how the checkout project moved this week: two of three
+								planned changes shipped, and the remaining one is waiting on review.
+							</AiMessage>
+						</div>
+						<h3 class="type-component-heading">{trustPoints[1].title}</h3>
+						<p class="type-body">{trustPoints[1].body}</p>
+					</div>
+				</FeatureCard>
+				<FeatureCard>
+					<div class="feature-grid__card feature-grid__card--illustrated">
+						<div class="trust-visual trust-visual--sources" aria-hidden="true">
+							<p class="trust-visual__surface type-supporting">
+								<strong>GitHub</strong><br />Pull requests, issues, reviews, releases
+							</p>
+							<p class="trust-visual__surface type-supporting">
+								<strong>monday.com</strong><br />Boards and items
+							</p>
+							<p class="trust-visual__surface type-supporting">
+								<strong>Jira</strong><br />Tickets and sprints
+							</p>
+						</div>
+						<h3 class="type-component-heading">{trustPoints[2].title}</h3>
+						<p class="type-body">{trustPoints[2].body}</p>
+					</div>
+				</FeatureCard>
 			</div>
 		</div>
 	</Section>
@@ -396,6 +439,82 @@
 		padding: 0;
 		gap: 2rem;
 		list-style: none;
+	}
+
+	/* Illustrated cards clip their visual at the card edge, so the wrapper takes the card's shape. */
+	.feature-grid__card--illustrated {
+		border-radius: inherit;
+		corner-shape: inherit;
+		padding-top: 0;
+		overflow: hidden;
+	}
+
+	.trust-visual {
+		display: grid;
+		height: 12rem;
+		box-sizing: border-box;
+		align-content: start;
+		margin-inline: -2rem;
+		margin-bottom: 1rem;
+		padding: 2rem 0 0 2rem;
+		gap: 1rem;
+		overflow: hidden;
+	}
+
+	.trust-visual p {
+		margin: 0;
+	}
+
+	/* The documented compact input surface. */
+	.trust-visual__surface {
+		width: max-content;
+		max-width: 28rem;
+		box-sizing: border-box;
+		border-radius: 1rem;
+		padding: 0.5rem 1rem;
+		background: var(--brand-color-white);
+		box-shadow: var(--shadow-surface);
+	}
+
+	@supports (corner-shape: squircle) {
+		.trust-visual__surface {
+			border-radius: 2rem;
+			corner-shape: squircle;
+		}
+	}
+
+	.trust-visual .trust-visual__surface--source {
+		display: flex;
+		align-items: center;
+		margin-left: 4rem;
+		gap: 0.5rem;
+	}
+
+	.trust-visual__icon {
+		display: block;
+		width: 1rem;
+		height: 1rem;
+		flex: none;
+		background: currentColor;
+		-webkit-mask: var(--icon-source) center / contain no-repeat;
+		mask: var(--icon-source) center / contain no-repeat;
+	}
+
+	.trust-visual--chat :global(.user-message) {
+		justify-self: end;
+		margin-right: -1rem;
+	}
+
+	.trust-visual--sources {
+		gap: 0.5rem;
+	}
+
+	.trust-visual--sources .trust-visual__surface:nth-child(2) {
+		margin-left: 3rem;
+	}
+
+	.trust-visual--sources .trust-visual__surface:nth-child(3) {
+		margin-left: 6rem;
 	}
 
 	.feature-grid__cards--steps > li {

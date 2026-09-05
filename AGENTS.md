@@ -37,7 +37,9 @@ Verified on September 5, 2026:
 - `/` contains the home-page hero (headline, shared tagline), an introduction section (what
   CadenceEngineer is and who it is for), Daily and Chat feature
   showcases whose samples carry a `CitationsModal` (shared brackets `IconButton` opening the shared
-  `Modal` with claim links, per the brand's Citations rule), the "Built to be checked" trust section,
+  `Modal` with claim links, per the brand's Citations rule), the "Built to be checked" trust section (each card opens with a small illustration built from
+  the compact input surface, `UserMessage`/`AiMessage`, and the brackets icon, clipped at the card
+  edge; illustrated card wrappers inherit the card shape and hide overflow),
   connected-tool then AI-provider logo grids, a numbered "How it works" section (numbers in the
   card headings, no pills or eyebrow labels anywhere on the page) and the access `Button`, and, behind `PUBLIC_PRICING_ENABLED`, the Basic, Premium, and
   Enterprise pricing cards. These public pricing cards are a proposal and do not describe the API's
