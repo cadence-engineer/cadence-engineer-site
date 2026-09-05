@@ -30,19 +30,28 @@ Keep the site compatible with static hosting. Do not introduce server-only route
 
 ## Current Baseline
 
-Verified on August 27, 2026:
+Verified on September 5, 2026:
 
 - `/` contains the home-page hero, Daily and Chat feature showcases, AI-provider and connected-tool
   logo grids, and the Basic, Premium, and Enterprise pricing cards. These public pricing cards are a
   proposal and do not describe the API's currently implemented plans.
-- `/contact`, `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current contact and legal
-  pages.
+- `/contact` carries `ContactForm`, composed from the shared `FormField` (text, email, select,
+  textarea, error text) and `Button` (now with the documented disabled state). The form posts JSON to
+  the same-origin `/api/contact`; the `Caddyfile` reverse-proxies that path to the API's
+  `POST /v1/contact` with the `X-Contact-Site` secret from `CONTACT_SITE_SECRET`, and
+  `vite.config.ts` provides the same proxy for `pnpm dev` from `CONTACT_API_ORIGIN` and
+  `CONTACT_SITE_SECRET` in `.env`. Neither value is embedded in the build. `?topic=` preselects the
+  topic in the browser. The API contract is documented in `../api/docs/contact.md`.
+- `/cookies`, `/imprint`, `/privacy`, and `/terms` provide the current legal pages.
 - `/404/` is prerendered with the shared site layout and client rendering disabled. `Staticfile`
   disables SPA index fallback, and the root `Caddyfile` serves that document as the body of HTTP 404
   responses.
 - The global layout provides the reusable announcement banner, header, main-content slot, and footer.
 - The build-time `PUBLIC_APP_LINKS_ENABLED` setting controls the header Sign in link and the Basic
-  and Premium Get Started links. Their destination derives from `PUBLIC_APP_ORIGIN`.
+  and Premium Get Started links. Their destination derives from `PUBLIC_APP_ORIGIN`. When app links
+  are disabled the header shows a Request access button to `/contact/?topic=test_access` instead.
+- The build-time `PUBLIC_PRICING_ENABLED` setting shows the pricing section; it is hidden by default
+  during early access.
 - `src/routes/+layout.ts` enables prerendering and trailing slashes.
 - `svelte.config.js` emits base-prefixed rather than page-relative paths so the shared 404 document
   remains valid when served for unknown URLs at any nesting depth.

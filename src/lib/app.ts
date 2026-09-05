@@ -14,3 +14,6 @@ export const appOrigin = normalizeAppOrigin(import.meta.env.PUBLIC_APP_ORIGIN);
 export const signInUrl = `${appOrigin}/signin`;
 
 export const appLinksEnabled = import.meta.env.PUBLIC_APP_LINKS_ENABLED === 'true';
+
+// The pricing section is hidden while CadenceEngineer is in early access.
+export const pricingEnabled = import.meta.env.PUBLIC_PRICING_ENABLED === 'true';
